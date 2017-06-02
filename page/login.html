@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			p {
+				text-indent: 22px;
+			}
+			
+			span.mui-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			
+			.mui-off-canvas-left {
+				color: #fff;
+			}
+			
+			.title {
+				margin: 35px 15px 10px;
+			}
+			
+			.title+.content {
+				margin: 10px 15px 35px;
+				color: #bbb;
+				text-indent: 1em;
+				font-size: 14px;
+				line-height: 24px;
+			}
+			
+			input {
+				color: #000;
+			}
+			
+			.userPic {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+			}
+			
+			.mui-repair {
+				width: 44%;
+				padding: 4% 0;
+				margin: 0 0 0 4%;
+				color: #fff;
+				border: 0;
+				background: #92b0dd;
+				border-radius: 10px;
+			}
+			
+			.mui-repair-left {
+				margin-right: 4%;
+				background: #e0b6b6;
+			}
+			
+			.mui-repair-right {
+				margin-left: -6px
+			}
+			
+			.textA {
+				vertical-align: middle
+			}
+			
+			.f-white {
+				color: #fff!important
+			}
+			
+			.order-null {
+				text-align: center;
+				padding-top: 20%;
+			}
+			#login{
+				position: fixed;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				z-index: 99;
+				text-align: center;
+				background: rgba(176, 176, 176, 0.69);
+			}
+			.mui-filter{
+            	-webkit-filter: blur(2px);
+            	-moz-filter: blur(2px);
+            	-o-filter: blur(2px);
+            	-ms-filter: blur(2px);
+            	filter: blur(2px);
+			}
+			.login-content{
+				padding-top:30%
+			}
+			.login-content img{
+				margin-bottom:15%
+			}
+			#login .f-login{
+				background: transparent;
+				border: 1px solid #fff;
+				box-sizing: border-box;
+				padding: 3px 5px 4px;
+			}
+			#login .mui-input-group{
+				background: transparent;
+				padding:0 10px
+			}
+			#login input{
+				border: 1px solid #a7a7a7;
+				border-radius: 6px;
+			}
+			#login .mui-input-row{margin-bottom: 10px;}
+		</style>
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+			<div id="login">
+				<header class="mui-bar mui-bar-nav" style="background: transparent">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<a class="mui-btn mui-pull-right f-white f-login">注册</a>
+				</header>
+				<div class="login-content">
+				<div><img src="../images/celerepair-logo.png" style="width: 60%;"/></div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<input type="text" class="" data-input-password="3">
+					</div>
+					<div class="mui-input-row">
+						<input type="password" class="mui-input-password" data-input-password="3">
+						<span class="mui-icon mui-icon-eye"></span>
+					</div>
+					<input type="submit" name="submit" id="submit" value="登录"/>
+				</form>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+	</body>
+
+</html>
