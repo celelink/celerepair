@@ -9,6 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
 		<style>
 			html,
 			body {
@@ -20,10 +21,8 @@
 			}
 			
 			span.mui-icon {
-				font-size: 14px;
-				color: #007aff;
-				margin-left: -15px;
-				padding-right: 10px;
+				font-size: 20px;
+				color: #fff;
 			}
 			
 			.mui-off-canvas-left {
@@ -43,7 +42,7 @@
 			}
 			
 			input {
-				color: #000;
+				color: #fff;
 			}
 			
 			.userPic {
@@ -81,11 +80,96 @@
 			.f-white {
 				color: #fff!important
 			}
+			.f-14{font-size: 14px!important;}
+			.bg-orange {
+				background-color: #ff5700!important
+			}
 			
 			.order-null {
 				text-align: center;
 				padding-top: 20%;
 			}
+			
+			#login,
+			#register {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 99;
+				text-align: center;
+				display: none;
+				background: rgba(120, 120, 120, 0.75);
+			}
+			
+			#login{display: block;}
+			.mui-filter {
+				-webkit-filter: blur(6px);
+				-moz-filter: blur(6px);
+				-o-filter: blur(6px);
+				-ms-filter: blur(6px);
+				filter: blur(6px);
+			}
+			
+			.login-content {
+				padding-top: 30%
+			}
+			
+			.login-content img {
+				margin-bottom: 15%
+			}
+			
+			#login .f-login {
+				background: transparent;
+				border: 1px solid #fff;
+				box-sizing: border-box;
+				padding: 3px 5px 4px;
+			}
+			
+			#login .mui-input-group,#register .mui-input-group {
+				background: transparent;
+				padding: 0 10px
+			}
+			
+			#login input,
+			#register input {
+				border: 1px solid #a7a7a7;
+				border-radius: 6px;
+			}
+			
+			#login .mui-input-row,
+			#register .mui-input-row {
+				margin-bottom: 10px;
+			}
+			
+			.icon-left {
+				left: 0;
+				font-size: 20px;
+				font-weight: 400;
+			}
+			
+			#login header a,
+			#register header a {
+				color: #fff
+			}
+			
+			.transparent {
+				background: transparent
+			}
+			
+			#register .mui-content {
+				padding-top: 25%
+			}
+			
+			#register .mui-content {
+				background: transparent
+			}
+			
+			#register .mui-table-view {
+				background: transparent;
+			}
+			#register .contact{margin:20px 0}
 		</style>
 	</head>
 
@@ -172,9 +256,9 @@
 				</div>
 			</aside>
 			<!--主界面部分-->
-			<div class="mui-inner-wrap mui-filter">
+			<div class="mui-inner-wrap">
 				<!--头部信息-->
-				<header class="mui-bar mui-bar-nav" style="background: transparent">
+				<header class="mui-bar mui-bar-nav transparent">
 					<span class="mui-icon mui-icon-location mui-pull-left f-white"></span>
 					<a class=" mui-btn mui-btn-link mui-pull-left f-white">上海市</a>
 				</header>
@@ -241,6 +325,72 @@
 					<div>暂无进行中订单</div>
 				</div>
 			</div>
+			<div id="login">
+				<header class="mui-bar mui-bar-nav" style="background: transparent">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title f-white">欢迎登录</h1>
+					<a id="goRegister" class="mui-btn mui-pull-right f-white f-login">注册</a>
+				</header>
+				<div class="login-content">
+					<div><img src="../images/celerepair-logo.png" style="width: 60%;" /></div>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+							<input type="text" data-input-password="3" placeholder="手机号/账号">
+						</div>
+						<div class="mui-input-row">
+							<span class="mui-icon mui-icon-locked icon-left"></span>
+							<input type="password" class="mui-input-password" data-input-password="3" placeholder="密码">
+							<span class="mui-icon mui-icon-eye"></span>
+						</div>
+						<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
+					</form>
+				</div>
+			</div>
+			<div id="register">
+				<header class="mui-bar mui-bar-nav transparent">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title f-white">注册快修</h1>
+				</header>
+				<div class="mui-content">
+					<div style="padding: 10px 10px;">
+						<div id="segmentedControl" class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#item2">个人用户</a>
+							<a class="mui-control-item" href="#item3">合作用户</a>
+						</div>
+					</div>
+					<div>
+						<div id="item2" class="mui-control-content mui-active">
+							<form class="mui-input-group">
+								<div class="mui-input-row">
+									<span class="mui-icon mui-icon-person-filled icon-left"></span>
+									<input type="text" data-input-password="3" placeholder="姓名">
+								</div>
+								<div class="mui-input-row">
+									<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+									<input type="text" data-input-password="3" placeholder="手机号">
+								</div>
+								<div class="mui-input-row">
+									<span class="mui-icon-extra mui-icon-extra-calc icon-left"></span>
+									<input type="password" class="mui-input-password" data-input-password="3" placeholder="验证码">
+								</div>
+								<div class="mui-input-row">
+									<span class="mui-icon mui-icon-locked icon-left"></span>
+									<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码">
+									<span class="mui-icon mui-icon-eye"></span>
+								</div>
+								<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
+							</form>
+						</div>
+						<div id="item3" class="mui-control-content">
+							<form class="mui-input-group">
+								<p class="contact f-white">合作用户请联系客服注册账号</p>
+								<a href="tel:4008001234" class="mui-btn mui-btn-block bg-orange f-white f-14">客服电话：400-200-3000</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script>
@@ -257,6 +407,7 @@
 					spans[i].style.display = "none";
 				}
 			}
+
 			//移动效果是否为整体移动
 			var moveTogether = false;
 			//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
@@ -273,18 +424,35 @@
 			mui('#offCanvasContentScroll').scroll();
 			//主界面‘显示侧滑菜单’按钮的点击事件
 			document.getElementById('offCanvasShow').addEventListener('tap', function() {
-				offCanvasWrapper.offCanvas('show');
-			});
+					offCanvasWrapper.offCanvas('show');
+				}
+
+			);
+			document.getElementById('goRegister').addEventListener('tap', function() {
+					document.getElementById('login').style.display = "none";
+					document.getElementById('register').style.display = "block";
+				}
+
+			);
 			//实现ios平台原生侧滑关闭页面；
 			if(mui.os.plus && mui.os.ios) {
-				mui.plusReady(function() { //5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
+				mui.plusReady(function() {
+					//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
 					plus.webview.currentWebview().setStyle({
 						'popGesture': 'none'
 					});
 				});
 			}
+
 			//自动播放轮播图
-			mui(function(e) { mui("#slider").slider({ interval: 4000 }) })
+			mui(function(e) {
+					mui("#slider").slider({
+						interval: 4000
+					})
+				}
+
+			)
+			
 		</script>
 	</body>
 

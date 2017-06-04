@@ -2424,7 +2424,7 @@ textarea {
 	width: 100%;
 	height: 40px;
 	margin-bottom: 15px;
-	padding: 10px 15px;
+	padding: 15px 10px 15px 38px;
 	-webkit-user-select: text;
 	border: 1px solid rgba(0, 0, 0, .2);
 	border-radius: 3px;
@@ -2478,7 +2478,7 @@ select:focus {
 	background-color: #fff
 }
 
-.mui-input-group:after {
+/*.mui-input-group:after {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -2500,7 +2500,7 @@ select:focus {
 	-webkit-transform: scaleY(.5);
 	transform: scaleY(.5);
 	background-color: #c8c7cc
-}
+}*/
 
 .mui-input-group input,
 .mui-input-group textarea {
@@ -2611,18 +2611,18 @@ select:focus {
 	padding: 8px 0
 }
 
-.mui-input-row .mui-input-clear~.mui-icon-clear,
+.mui-input-row .mui-input-clear~.mui-icon-clear,.icon-left,
 .mui-input-row .mui-input-password~.mui-icon-eye,
 .mui-input-row .mui-input-speech~.mui-icon-speech {
 	font-size: 20px;
 	position: absolute;
 	z-index: 1;
-	top: 10px;
+	top: 9px;
 	right: 0;
 	width: 38px;
 	height: 38px;
 	text-align: center;
-	color: #999
+	color: #fff
 }
 
 .mui-input-row .mui-input-clear~.mui-icon-clear.mui-active,
@@ -4670,3 +4670,15 @@ body>.mui-progressbar {
 	height: 100%;
 	border: 0
 }
+::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #fff; 
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #fff; 
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #fff; 
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #fff; 
+} 
