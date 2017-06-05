@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>用户注册</title>
+		<title>消息中心</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -94,15 +94,10 @@
 				padding-top: 20%;
 			}
 			
-			#register {
-				position: fixed;
-				top: 0;
+			.icon-left {
 				left: 0;
-				right: 0;
-				bottom: 0;
-				z-index: 99;
-				text-align: center;
-				background: rgba(120, 120, 120, 0.75);
+				font-size: 20px;
+				font-weight: 400;
 			}
 			
 			.mui-filter {
@@ -121,54 +116,46 @@
 				margin-bottom: 15%
 			}
 			
-			.f-blank {
-				color: #000!important
-			}
-			
-			#register .mui-input-group {
-				background: transparent;
-				padding: 0 10px
-			}
-			
-			#register input {
-				border: 1px solid #a7a7a7;
-				border-radius: 6px;
-			}
-			
-			#register .mui-input-row {
-				margin-bottom: 10px;
-			}
-			
-			.icon-left {
-				left: 0;
-				font-size: 20px;
-				font-weight: 400;
-			}
-			
 			.transparent {
 				background: transparent
 			}
 			
-			#register .mui-content {
-				padding-top: 25%
+			.f-blank {
+				color: #000!important
 			}
 			
-			#register .mui-content {
-				background: transparent
+			#login {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 99;
+				text-align: center;
+				background: rgba(120, 120, 120, 0.75);
 			}
 			
-			#register .mui-table-view {
+			#login .f-login {
 				background: transparent;
+				box-sizing: border-box;
+				padding: 3px 5px 4px;
 			}
 			
-			#register .contact {
-				margin: 20px 0
+			#login .mui-input-group {
+				background: transparent;
+				padding: 0 10px
 			}
 			
-			.mui-content {
-				padding-top: 44px;
+			#login input {
+				border: 1px solid #a7a7a7;
+				border-radius: 6px;
 			}
-			#register header a {
+			
+			#login .mui-input-row {
+				margin-bottom: 10px;
+			}
+			
+			#login header a {
 				color: #fff
 			}
 			.mui-box-shadow-none{box-shadow: none;}
@@ -176,52 +163,31 @@
 	</head>
 
 	<body>
-		<div id="register">
+		<div id="login">
 			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-				<h1 class="mui-title">注册快修</h1>
+				<h1 class="mui-title">消息中心</h1>
+				<a href="register.html" class="mui-btn mui-pull-right f-login">注册</a>
 			</header>
-			<div class="mui-content">
-				<div style="padding: 10px 10px;">
-					<div id="segmentedControl" class="mui-segmented-control">
-						<a class="mui-control-item mui-active" href="#item2">个人用户</a>
-						<a class="mui-control-item" href="#item3">合作用户</a>
+			<div class="login-content">
+				<div><img src="../images/celerepair-logo.png" style="width: 60%;" /></div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+						<input type="text" data-input-password="3" placeholder="手机号/账号">
 					</div>
-				</div>
-				<div>
-					<div id="item2" class="mui-control-content mui-active">
-						<form class="mui-input-group">
-							<div class="mui-input-row">
-								<span class="mui-icon mui-icon-person-filled icon-left"></span>
-								<input type="text" data-input-password="3" placeholder="姓名">
-							</div>
-							<div class="mui-input-row">
-								<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
-								<input type="text" data-input-password="3" placeholder="手机号">
-							</div>
-							<div class="mui-input-row">
-								<span class="mui-icon-extra mui-icon-extra-calc icon-left"></span>
-								<input type="password" class="mui-input-password" data-input-password="3" placeholder="验证码">
-							</div>
-							<div class="mui-input-row">
-								<span class="mui-icon mui-icon-locked icon-left"></span>
-								<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码">
-								<span class="mui-icon mui-icon-eye"></span>
-							</div>
-							<input type="submit" name="submit" id="submit" value="注册" class="mui-btn mui-btn-block bg-orange" />
-						</form>
+					<div class="mui-input-row">
+						<span class="mui-icon mui-icon-locked icon-left"></span>
+						<input type="password" class="mui-input-password" data-input-password="3" placeholder="密码">
+						<span class="mui-icon mui-icon-eye"></span>
 					</div>
-					<div id="item3" class="mui-control-content">
-						<form class="mui-input-group">
-							<p class="contact f-white">合作用户请联系客服注册账号</p>
-							<a href="tel:4008001234" class="mui-btn mui-btn-block bg-orange f-white f-14">客服电话：400-200-3000</a>
-						</form>
-					</div>
-				</div>
+					<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
+				</form>
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript">
+		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
+		<script>
 			mui.init();
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
