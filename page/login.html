@@ -80,8 +80,14 @@
 			.f-white {
 				color: #fff!important
 			}
-			.f-14{font-size: 14px!important;}
-			.bg-orange {background-color: #ff5700!important}
+			
+			.f-14 {
+				font-size: 14px!important;
+			}
+			
+			.bg-orange {
+				background-color: #ff5700!important
+			}
 			
 			.order-null {
 				text-align: center;
@@ -113,10 +119,12 @@
 			.transparent {
 				background: transparent
 			}
+			
 			.f-blank {
 				color: #000!important
 			}
-			#login{
+			
+			#login {
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -139,16 +147,16 @@
 				padding: 0 10px
 			}
 			
-			#login input{
+			#login input {
 				border: 1px solid #a7a7a7;
 				border-radius: 6px;
 			}
 			
-			#login .mui-input-row{
+			#login .mui-input-row {
 				margin-bottom: 10px;
 			}
 			
-			#login header a{
+			#login header a {
 				color: #fff
 			}
 		</style>
@@ -178,11 +186,23 @@
 					</form>
 				</div>
 			</div>
-			
+
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script>
 			mui.init();
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			//实现ios平台原生侧滑关闭页面；
+			if(mui.os.plus && mui.os.ios) {
+				mui.plusReady(function() {
+					//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
+					plus.webview.currentWebview().setStyle({
+						'popGesture': 'none'
+					});
+				});
+			}
 		</script>
 	</body>
 
