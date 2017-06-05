@@ -22,7 +22,6 @@
 			
 			span.mui-icon {
 				font-size: 20px;
-				color: #fff;
 			}
 			
 			.mui-off-canvas-left {
@@ -72,7 +71,7 @@
 			.mui-repair-right {
 				margin-left: -6px
 			}
-			
+			.mui-inline-block{display: inline-block!important;}
 			.textA {
 				vertical-align: middle
 			}
@@ -80,6 +79,10 @@
 			.f-white {
 				color: #fff!important
 			}
+			.f-blank {
+				color: #000!important
+			}
+			.f-essential{color: #c5c5c5!important;}
 			.f-14{font-size: 14px!important;}
 			.bg-orange {
 				background-color: #ff5700!important
@@ -89,87 +92,17 @@
 				text-align: center;
 				padding-top: 20%;
 			}
-			
-			#login,
-			#register {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				z-index: 99;
-				text-align: center;
-				display: none;
-				background: rgba(120, 120, 120, 0.75);
-			}
-			
-			#login{display: block;}
-			.mui-filter {
-				-webkit-filter: blur(6px);
-				-moz-filter: blur(6px);
-				-o-filter: blur(6px);
-				-ms-filter: blur(6px);
-				filter: blur(6px);
-			}
-			
-			.login-content {
-				padding-top: 30%
-			}
-			
-			.login-content img {
-				margin-bottom: 15%
-			}
-			
-			#login .f-login {
-				background: transparent;
-				border: 1px solid #fff;
-				box-sizing: border-box;
-				padding: 3px 5px 4px;
-			}
-			
-			#login .mui-input-group,#register .mui-input-group {
-				background: transparent;
-				padding: 0 10px
-			}
-			
-			#login input,
-			#register input {
-				border: 1px solid #a7a7a7;
-				border-radius: 6px;
-			}
-			
-			#login .mui-input-row,
-			#register .mui-input-row {
-				margin-bottom: 10px;
-			}
-			
-			.icon-left {
-				left: 0;
-				font-size: 20px;
-				font-weight: 400;
-			}
-			
-			#login header a,
-			#register header a {
-				color: #fff
-			}
-			
 			.transparent {
 				background: transparent
 			}
-			
-			#register .mui-content {
-				padding-top: 25%
+			.grad {
+			  background: -webkit-linear-gradient(#676767, rgba(255, 255, 255, 0)); /* Safari 5.1 - 6.0 */
+			  background: -o-linear-gradient(#676767, rgba(255, 255, 255, 0)); /* Opera 11.1 - 12.0 */
+			  background: -moz-linear-gradient(#676767, rgba(255, 255, 255, 0)); /* Firefox 3.6 - 15 */
+			  background: linear-gradient(#676767, rgba(255, 255, 255, 0)) /* 标准的语法 */
 			}
-			
-			#register .mui-content {
-				background: transparent
-			}
-			
-			#register .mui-table-view {
-				background: transparent;
-			}
-			#register .contact{margin:20px 0}
+			.mui-bar .mui-icon{font-size: 22px;padding-top: 11px;padding-bottom: 11px;}
+			.mui-box-shadow{box-shadow: 0 4px 10px rgba(119, 119, 119, 0.3);}
 		</style>
 	</head>
 
@@ -184,7 +117,9 @@
 								<img src="../images/yuantiao.jpg" alt="" width="100%" />
 							</div>
 							<div class="userPic">
-								<img src="../images/60x60.gif" />
+								<a href="login.html" class="mui-block">
+									<img src="../images/60x60.gif" />
+								</a>
 								<div>编辑资料</div>
 							</div>
 						</div>
@@ -258,7 +193,7 @@
 			<!--主界面部分-->
 			<div class="mui-inner-wrap">
 				<!--头部信息-->
-				<header class="mui-bar mui-bar-nav transparent">
+				<header class="mui-bar mui-bar-nav grad">
 					<span class="mui-icon mui-icon-location mui-pull-left f-white"></span>
 					<a class=" mui-btn mui-btn-link mui-pull-left f-white">上海市</a>
 				</header>
@@ -310,85 +245,19 @@
 				</div>
 				<div class="mui-content-padded">
 					<a href="login.html">
-						<button type="button" class="mui-repair mui-repair-left">
+						<button type="button" class="mui-repair mui-repair-left mui-box-shadow">
 							<img src="../images/ice-repair.png"/>
 							<span class="textA">我要报修</span>
 						</button>
 					</a>
-					<button type="button" id="offCanvasShow" class="mui-repair mui-repair-right">
+					<button type="button" id="offCanvasShow" class="mui-repair mui-repair-right mui-box-shadow">
 		            	<img src="../images/ice-personal.png"/>
 		            	<span class="textA">个人中心</span>
 		        	</button>
 				</div>
 				<div class="order-null">
 					<img src="../images/ice-null.png" />
-					<div>暂无进行中订单</div>
-				</div>
-			</div>
-			<div id="login">
-				<header class="mui-bar mui-bar-nav" style="background: transparent">
-					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-					<h1 class="mui-title f-white">欢迎登录</h1>
-					<a id="goRegister" class="mui-btn mui-pull-right f-white f-login">注册</a>
-				</header>
-				<div class="login-content">
-					<div><img src="../images/celerepair-logo.png" style="width: 60%;" /></div>
-					<form class="mui-input-group">
-						<div class="mui-input-row">
-							<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
-							<input type="text" data-input-password="3" placeholder="手机号/账号">
-						</div>
-						<div class="mui-input-row">
-							<span class="mui-icon mui-icon-locked icon-left"></span>
-							<input type="password" class="mui-input-password" data-input-password="3" placeholder="密码">
-							<span class="mui-icon mui-icon-eye"></span>
-						</div>
-						<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
-					</form>
-				</div>
-			</div>
-			<div id="register">
-				<header class="mui-bar mui-bar-nav transparent">
-					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-					<h1 class="mui-title f-white">注册快修</h1>
-				</header>
-				<div class="mui-content">
-					<div style="padding: 10px 10px;">
-						<div id="segmentedControl" class="mui-segmented-control">
-							<a class="mui-control-item mui-active" href="#item2">个人用户</a>
-							<a class="mui-control-item" href="#item3">合作用户</a>
-						</div>
-					</div>
-					<div>
-						<div id="item2" class="mui-control-content mui-active">
-							<form class="mui-input-group">
-								<div class="mui-input-row">
-									<span class="mui-icon mui-icon-person-filled icon-left"></span>
-									<input type="text" data-input-password="3" placeholder="姓名">
-								</div>
-								<div class="mui-input-row">
-									<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
-									<input type="text" data-input-password="3" placeholder="手机号">
-								</div>
-								<div class="mui-input-row">
-									<span class="mui-icon-extra mui-icon-extra-calc icon-left"></span>
-									<input type="password" class="mui-input-password" data-input-password="3" placeholder="验证码">
-								</div>
-								<div class="mui-input-row">
-									<span class="mui-icon mui-icon-locked icon-left"></span>
-									<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码">
-									<span class="mui-icon mui-icon-eye"></span>
-								</div>
-								<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
-							</form>
-						</div>
-						<div id="item3" class="mui-control-content">
-							<form class="mui-input-group">
-								<p class="contact f-white">合作用户请联系客服注册账号</p>
-								<a href="tel:4008001234" class="mui-btn mui-btn-block bg-orange f-white f-14">客服电话：400-200-3000</a>
-							</form>
-						</div>
-					</div>
+					<div class="f-essential">暂无进行中订单</div>
 				</div>
 			</div>
 		</div>
@@ -425,12 +294,6 @@
 			//主界面‘显示侧滑菜单’按钮的点击事件
 			document.getElementById('offCanvasShow').addEventListener('tap', function() {
 					offCanvasWrapper.offCanvas('show');
-				}
-
-			);
-			document.getElementById('goRegister').addEventListener('tap', function() {
-					document.getElementById('login').style.display = "none";
-					document.getElementById('register').style.display = "block";
 				}
 
 			);

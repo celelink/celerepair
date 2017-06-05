@@ -9,6 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
 		<style>
 			html,
 			body {
@@ -20,10 +21,8 @@
 			}
 			
 			span.mui-icon {
-				font-size: 14px;
-				color: #007aff;
-				margin-left: -15px;
-				padding-right: 10px;
+				font-size: 20px;
+				color: #fff;
 			}
 			
 			.mui-off-canvas-left {
@@ -43,7 +42,7 @@
 			}
 			
 			input {
-				color: #000;
+				color: #fff;
 			}
 			
 			.userPic {
@@ -81,75 +80,110 @@
 			.f-white {
 				color: #fff!important
 			}
+			.f-14{font-size: 14px!important;}
+			.bg-orange {background-color: #ff5700!important}
 			
 			.order-null {
 				text-align: center;
 				padding-top: 20%;
 			}
+			
+			.icon-left {
+				left: 0;
+				font-size: 20px;
+				font-weight: 400;
+			}
+			
+			.mui-filter {
+				-webkit-filter: blur(6px);
+				-moz-filter: blur(6px);
+				-o-filter: blur(6px);
+				-ms-filter: blur(6px);
+				filter: blur(6px);
+			}
+			
+			.login-content {
+				padding-top: 30%
+			}
+			
+			.login-content img {
+				margin-bottom: 15%
+			}
+			
+			.transparent {
+				background: transparent
+			}
+			.f-blank {
+				color: #000!important
+			}
 			#login{
 				position: fixed;
-				top:0;
-				left:0;
-				right:0;
-				bottom:0;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
 				z-index: 99;
 				text-align: center;
-				background: rgba(176, 176, 176, 0.69);
+				background: rgba(120, 120, 120, 0.75);
 			}
-			.mui-filter{
-            	-webkit-filter: blur(2px);
-            	-moz-filter: blur(2px);
-            	-o-filter: blur(2px);
-            	-ms-filter: blur(2px);
-            	filter: blur(2px);
-			}
-			.login-content{
-				padding-top:30%
-			}
-			.login-content img{
-				margin-bottom:15%
-			}
-			#login .f-login{
+			
+			#login .f-login {
 				background: transparent;
 				border: 1px solid #fff;
 				box-sizing: border-box;
 				padding: 3px 5px 4px;
 			}
-			#login .mui-input-group{
+			
+			#login .mui-input-group {
 				background: transparent;
-				padding:0 10px
+				padding: 0 10px
 			}
+			
 			#login input{
 				border: 1px solid #a7a7a7;
 				border-radius: 6px;
 			}
-			#login .mui-input-row{margin-bottom: 10px;}
+			
+			#login .mui-input-row{
+				margin-bottom: 10px;
+			}
+			
+			#login header a{
+				color: #fff
+			}
 		</style>
 	</head>
 
 	<body>
 		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
 			<div id="login">
-				<header class="mui-bar mui-bar-nav" style="background: transparent">
-					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-					<a class="mui-btn mui-pull-right f-white f-login">注册</a>
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-blank"></a>
+					<h1 class="mui-title">欢迎登录</h1>
+					<a href="register.html" class="mui-btn mui-pull-right f-login">注册</a>
 				</header>
 				<div class="login-content">
-				<div><img src="../images/celerepair-logo.png" style="width: 60%;"/></div>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<input type="text" class="" data-input-password="3">
-					</div>
-					<div class="mui-input-row">
-						<input type="password" class="mui-input-password" data-input-password="3">
-						<span class="mui-icon mui-icon-eye"></span>
-					</div>
-					<input type="submit" name="submit" id="submit" value="登录"/>
-				</form>
+					<div><img src="../images/celerepair-logo.png" style="width: 60%;" /></div>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+							<input type="text" data-input-password="3" placeholder="手机号/账号">
+						</div>
+						<div class="mui-input-row">
+							<span class="mui-icon mui-icon-locked icon-left"></span>
+							<input type="password" class="mui-input-password" data-input-password="3" placeholder="密码">
+							<span class="mui-icon mui-icon-eye"></span>
+						</div>
+						<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
+					</form>
 				</div>
 			</div>
+			
 		</div>
 		<script src="../js/mui.min.js"></script>
+		<script>
+			
+		</script>
 	</body>
 
 </html>
