@@ -71,7 +71,11 @@
 			.mui-repair-right {
 				margin-left: -6px
 			}
-			.mui-inline-block{display: inline-block!important;}
+			
+			.mui-inline-block {
+				display: inline-block!important;
+			}
+			
 			.textA {
 				vertical-align: middle
 			}
@@ -79,11 +83,20 @@
 			.f-white {
 				color: #fff!important
 			}
+			
 			.f-blank {
 				color: #000!important
 			}
-			.f-essential{color: #c5c5c5!important;font-weight:bold}
-			.f-14{font-size: 14px!important;}
+			
+			.f-essential {
+				color: #c5c5c5!important;
+				font-weight: bold
+			}
+			
+			.f-14 {
+				font-size: 14px!important;
+			}
+			
 			.bg-orange {
 				background-color: #ff5700!important
 			}
@@ -92,20 +105,34 @@
 				text-align: center;
 				padding-top: 10%;
 			}
+			
 			.transparent {
 				background: transparent
 			}
+			
 			.grad {
-			  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0)); /* Safari 5.1 - 6.0 */
-			  background: -o-linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0)); /* Opera 11.1 - 12.0 */
-			  background: -moz-linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0)); /* Firefox 3.6 - 15 */
-			  background: linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0)) /* 标准的语法 */ 
+				background: -webkit-linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0));
+				/* Safari 5.1 - 6.0 */
+				background: -o-linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0));
+				/* Opera 11.1 - 12.0 */
+				background: -moz-linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0));
+				/* Firefox 3.6 - 15 */
+				background: linear-gradient(rgba(0, 0, 0, 0.54), rgba(255, 255, 255, 0))/* 标准的语法 */
 			}
+			
 			header a {
 				color: #fff
 			}
-			.mui-bar .mui-icon{font-size: 22px;padding-top: 11px;padding-bottom: 11px;}
-			.mui-box-shadow{box-shadow: 0 4px 10px rgba(119, 119, 119, 0.3);}
+			
+			.mui-bar .mui-icon {
+				font-size: 22px;
+				padding-top: 11px;
+				padding-bottom: 11px;
+			}
+			
+			.mui-box-shadow {
+				box-shadow: 0 4px 10px rgba(119, 119, 119, 0.3);
+			}
 		</style>
 	</head>
 
@@ -124,13 +151,14 @@
 					<div class="mui-scroll">
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<img src="../images/yuantiao.jpg" alt="" width="100%" />
+								<img src="../images/1.png" alt="" width="100%" />
 							</div>
 							<div class="userPic">
-								<a href="login.html" class="mui-block">
-									<img src="../images/60x60.gif" />
+								<img src="../images/60x60.gif" />
+								<div>ID:<span>946562</span></div>
+								<a href="personal.html" class="mui-block">
+									<div>编辑资料</div>
 								</a>
-								<div>编辑资料</div>
 							</div>
 						</div>
 						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
@@ -325,7 +353,10 @@
 				}
 
 			)
-			
+			//开启A标签的跳转
+			mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
+			});
 		</script>
 	</body>
 
