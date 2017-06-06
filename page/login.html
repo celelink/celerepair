@@ -158,7 +158,10 @@
 			#login header a {
 				color: #fff
 			}
-			.mui-box-shadow-none{box-shadow: none;}
+			
+			.mui-box-shadow-none {
+				box-shadow: none;
+			}
 		</style>
 	</head>
 
@@ -179,7 +182,7 @@
 					<div class="mui-input-row">
 						<span class="mui-icon mui-icon-locked icon-left"></span>
 						<input type="password" class="mui-input-password" data-input-password="3" placeholder="密码">
-						<span class="mui-icon mui-icon-eye"></span>
+						<span class="mui-icon mui-icon-eye" id="see"></span>
 					</div>
 					<input type="submit" name="submit" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange" />
 				</form>
@@ -201,6 +204,19 @@
 					});
 				});
 			}
+			//开启A标签的跳转
+			mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
+			});
+			document.getElementById('see').addEventListener('click',function(){
+				if(mui(".mui-input-password")[0].getAttribute("type")=="password"){
+					mui(".mui-input-password")[0].setAttribute("type","text");
+					this.style.color="#ccc";
+				}else{
+					mui(".mui-input-password")[0].setAttribute("type","password");
+					this.style.color="#fff";
+				}
+			});
 		</script>
 	</body>
 

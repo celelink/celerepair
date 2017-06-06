@@ -15,10 +15,9 @@
 			body {
 				background-color: #efeff4;
 			}
-			
-			p {
+			/*p {
 				text-indent: 22px;
-			}
+			}*/
 			
 			span.mui-icon {
 				font-size: 20px;
@@ -43,6 +42,14 @@
 			
 			input {
 				color: #fff;
+			}
+			
+			h4 {
+				font-weight: 400
+			}
+			
+			.f-blank {
+				color: #000!important
 			}
 			
 			.userPic {
@@ -89,12 +96,112 @@
 				background-color: #ff5700!important
 			}
 			
+			.mui-card-content-inner {
+				padding: 10px
+			}
+			
+			.mui-card-content-inner span {
+				color: #757575
+			}
+			
+			.mui-dot {
+				position: absolute;
+				display: inline-block;
+				top: 10;
+				right: 10px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: red;
+			}
+			
+			.dataTime {
+				margin-top: 10px
+			}
+			.mui-bar{background-color:#ff5700}
 		</style>
 	</head>
 
 	<body>
-		<div id="login">
-			<h1>消息中心</h1>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
+			<h1 class="mui-title">消息中心</h1>
+		</header>
+		<div id="messageLists" class="mui-content">
+			<div id="messageList">
+				<p class="mui-text-center dataTime">2017-06-06 10:00 (周三)</p>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<span class="mui-dot"></span>
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<span class="mui-dot"></span>
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="messageList">
+				<p class="mui-text-center dataTime">2017-06-05 10:00 (周二)</p>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<span class="mui-dot"></span>
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<span class="mui-dot"></span>
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<h4>官方消息</h4>
+							<span>您的订单已审核通过！</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
