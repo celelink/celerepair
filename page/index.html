@@ -15,7 +15,6 @@
 			body {
 				background-color: #efeff4;
 			}
-			
 			/*p {
 				text-indent: 22px;
 			}*/
@@ -44,6 +43,7 @@
 				color: #fff;
 			}
 			/*个人中心头像部分*/
+			
 			.userPic {
 				position: absolute;
 				top: 50%;
@@ -52,23 +52,29 @@
 				-ms-transform: translate(-50%, -50%);
 				transform: translate(-50%, -50%);
 			}
-			.userPic>div{
-				margin:5px 0;
+			
+			.userPic>div {
+				margin: 5px 0;
 			}
-			.userPic a{
+			
+			.userPic a {
 				background-color: #000;
-				color:#fff;
-				margin-top:5px;
-				position:relative;
-				padding:2px 20px;
+				color: #fff;
+				margin-top: 5px;
+				position: relative;
+				padding: 2px 20px;
 				border-radius: 15px;
 			}
 			
-			.mui-navigate-right:after{right:5px}
-			.userImg{
+			.mui-navigate-right:after {
+				right: 5px
+			}
+			
+			.userImg {
 				width: 80px;
 				border-radius: 50%;
 			}
+			
 			.mui-repair {
 				width: 44%;
 				padding: 4% 0;
@@ -149,7 +155,10 @@
 			.mui-box-shadow {
 				box-shadow: 0 4px 10px rgba(119, 119, 119, 0.3);
 			}
-			.mui-card{margin:0 0 2px 0}
+			
+			.mui-card {
+				margin: 0 0 2px 0
+			}
 		</style>
 	</head>
 
@@ -378,8 +387,10 @@
 			document.getElementById("confirmBtn").addEventListener('tap', function() {
 				var btnArray = ['取消', '拨打'];
 				mui.confirm('400-888-888', '您确定拨打电话吗？', btnArray, function(e) {
-					if (e.index == 1) {
-						plus.device.dial('400-888-888', false); 
+					if(e.index == 1) {
+						mui.plusReady(function() {
+							plus.device.dial('400-888-888', false);
+						});
 					} else {
 						//info.innerText = 'MUI没有得到你的认可，继续加油'
 					}
