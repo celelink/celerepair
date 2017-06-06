@@ -388,14 +388,25 @@
 				var btnArray = ['取消', '拨打'];
 				mui.confirm('400-888-888', '您确定拨打电话吗？', btnArray, function(e) {
 					if(e.index == 1) {
-						mui.plusReady(function() {
-							plus.device.dial('400-888-888', false);
-						});
+						plusReady();
 					} else {
 						//info.innerText = 'MUI没有得到你的认可，继续加油'
 					}
 				})
 			});
+
+			// H5 plus事件处理
+			function plusReady() {
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+
+				function dialTest() {
+					plus.device.dial("10086", false);
+				}
+			}
 		</script>
 	</body>
 
