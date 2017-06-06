@@ -256,162 +256,166 @@
 			</aside>
 			<!--主界面部分-->
 			<div class="mui-inner-wrap">
-				<!--头部信息-->
-				<header class="mui-bar mui-bar-nav grad">
-					<span class="mui-icon mui-icon-location mui-pull-left f-white"></span>
-					<a class=" mui-btn mui-btn-link mui-pull-left f-white">上海市</a>
-				</header>
-				<!--轮播图-->
-				<div id="slider" class="mui-slider">
-					<div class="mui-slider-group mui-slider-loop">
-						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-						<div class="mui-slider-item mui-slider-item-duplicate"></div>
-						<!-- 第一张 -->
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="../images/1.png">
-							</a>
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!--头部信息-->
+						<header class="mui-bar mui-bar-nav grad">
+							<span class="mui-icon mui-icon-location mui-pull-left f-white"></span>
+							<a class=" mui-btn mui-btn-link mui-pull-left f-white">上海市</a>
+						</header>
+						<!--轮播图-->
+						<div id="slider" class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+								<div class="mui-slider-item mui-slider-item-duplicate"></div>
+								<!-- 第一张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../images/1.png">
+									</a>
+								</div>
+								<!-- 第二张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../images/2.png">
+									</a>
+								</div>
+								<!-- 第三张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../images/3.png">
+									</a>
+								</div>
+								<!-- 第四张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../images/4.png">
+									</a>
+								</div>
+								<!-- 第五张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../images/5.png">
+									</a>
+								</div>
+								<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+								<div class="mui-slider-item mui-slider-item-duplicate"></div>
+							</div>
+							<div class="mui-slider-indicator">
+								<div class="mui-indicator mui-active"></div>
+								<div class="mui-indicator"></div>
+								<div class="mui-indicator"></div>
+								<div class="mui-indicator"></div>
+								<div class="mui-indicator"></div>
+							</div>
 						</div>
-						<!-- 第二张 -->
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="../images/2.png">
-							</a>
-						</div>
-						<!-- 第三张 -->
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="../images/3.png">
-							</a>
-						</div>
-						<!-- 第四张 -->
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="../images/4.png">
-							</a>
-						</div>
-						<!-- 第五张 -->
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="../images/5.png">
-							</a>
-						</div>
-						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-						<div class="mui-slider-item mui-slider-item-duplicate"></div>
-					</div>
-					<div class="mui-slider-indicator">
-						<div class="mui-indicator mui-active"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-					</div>
-				</div>
-				<div class="mui-content-padded">
-					<a href="login.html">
-						<button type="button" class="mui-repair mui-repair-left mui-box-shadow">
+						<div class="mui-content-padded">
+							<a href="login.html">
+								<button type="button" class="mui-repair mui-repair-left mui-box-shadow">
 							<img src="../images/ice-repair.png"/>
 							<span class="textA">我要报修</span>
 						</button>
-					</a>
-					<button type="button" id="offCanvasShow" class="mui-repair mui-repair-right mui-box-shadow">
+							</a>
+							<button type="button" id="offCanvasShow" class="mui-repair mui-repair-right mui-box-shadow">
 		            	<img src="../images/ice-personal.png"/>
 		            	<span class="textA">个人中心</span>
 		        	</button>
-				</div>
-				<div class="order-list">
-					<!--<div class="order-null">
+						</div>
+						<div class="order-list">
+							<!--<div class="order-null">
 						<img src="../images/ice-null.png" />
 						<div class="f-essential">暂无进行中订单</div>
 					</div>-->
-					<div class="mui-text-center">
-						<span class="mui-icon-extra mui-icon-extra-lamp"></span>
-						<p class="f-blank">进行中订单</p>
-					</div>
-					<div class="mui-card" style="margin-bottom: 35px;">
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
-									<div class="mui-media-body">
-										CBD
-										<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right" href="javascript:;">
-									<img class="mui-media-object mui-pull-left" src="../images/yuantiao.jpg">
-									<div class="mui-media-body">
-										远眺
-										<p class="mui-ellipsis">静静的看这个世界，最后终于疯了</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a class="mui-navigate-right">
-									<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-									<div class="mui-media-body">
-										幸福
-										<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-									</div>
-								</a>
-							</li>
-						</ul>
+							<div class="mui-text-center">
+								<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+								<p class="f-blank">进行中订单</p>
+							</div>
+							<div class="mui-card" style="margin-bottom: 35px;">
+								<ul class="mui-table-view mui-table-view-chevron">
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+											<div class="mui-media-body">
+												CBD
+												<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right" href="javascript:;">
+											<img class="mui-media-object mui-pull-left" src="../images/yuantiao.jpg">
+											<div class="mui-media-body">
+												远眺
+												<p class="mui-ellipsis">静静的看这个世界，最后终于疯了</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+											<div class="mui-media-body">
+												幸福
+												<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -470,6 +474,14 @@
 				}
 
 			)
+			//
+			mui(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+
+			});
 			//开启A标签的跳转
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
