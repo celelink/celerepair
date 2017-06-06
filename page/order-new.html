@@ -15,7 +15,6 @@
 			body {
 				background-color: #efeff4;
 			}
-			
 			/*p {
 				text-indent: 22px;
 			}*/
@@ -63,7 +62,11 @@
 				background: #92b0dd;
 				border-radius: 10px;
 			}
-			#offCanvasSideScroll{padding-top:44px}
+			
+			#offCanvasSideScroll {
+				padding-top: 44px;
+			}
+			
 			.mui-repair-left {
 				margin-right: 4%;
 				background: #e0b6b6;
@@ -88,44 +91,117 @@
 			.bg-orange {
 				background-color: #ff5700!important;
 			}
-			.userImg{
+			
+			.userImg {
 				position: absolute;
 				top: 0;
-				right:40px;
+				right: 40px;
 				height: 43px;
-				padding:3px 0;
+				padding: 3px 0;
 			}
-			.mui-position-right{
+			
+			.mui-position-right {
 				position: absolute;
 				right: 40px;
 			}
-			.mui-bar{background-color:#ff5700}
+			
+			.mui-bar {
+				background-color: #ff5700
+			}
+			
 			.f-orange {
 				color: #ff5700!important
 			}
-			.content{padding-top:30%}
-			.content .about{
-				padding:10px 0 0;
+			.f-blank {
+				color: #000!important
+			}
+			.content{padding:0 15px}
+			.content .about {
+				padding: 10px 0 0;
 			}
 			/*控制退出的样式*/
-			.exit .mui-table-view-cell{padding-right:0}
-			.exit .mui-table-view-cell>a:not(.mui-btn){margin-right:0}
+			
+			.exit .mui-table-view-cell {
+				padding-right: 0
+			}
+			
+			.exit .mui-table-view-cell>a:not(.mui-btn) {
+				margin-right: 0
+			}
+			.order-title{padding:0 0 5px 0}
+			.orderNew{padding:0 15px}
+			.orderNew .mui-icon{font-size: 16PX;}
+			.orderNew .mui-table-view-cell:after{left:0}
+			#submit{background:#ff5700;color:#fff;border-radius: 5px;}
 		</style>
 	</head>
 
 	<body>
-		<div id="">
+		<div class="orderNew">
 			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
 				<a href="index.html" class="mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
 				<h1 class="mui-title">个人报修</h1>
 				<a href="message.html" class="mui-pull-right">
 				</a>
 			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
-				<div class="content">
-					<img src="../images/logo.png"/>
-					<p class="about">快修 旨在精益求精</p>
-					<p>1.0.0</p>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="content">
+						<p class="about  mui-text-center">个人用户可在此报修，请填写需求内容<br />我们会尽快安排工作人员上门服务</p>
+						<div class="mui-bar-nav">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right mui-icon mui-icon-location">
+									报修地址
+								</a>
+							</li>
+						</ul>
+						</div>
+						<br>
+						<div class="mui-bar-nav">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right mui-icon mui-icon-location">
+									报修类型
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right mui-icon mui-icon-location">
+									上门时间
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<p class="order-title">你可以上传多张报修图片:</p>
+								<input accept="image/*" type="file" >
+							</li>
+							<li class="mui-table-view-cell">
+								<p class="order-title">请对报修项目进行描述:</p>
+								<textarea name="" rows="5" cols="5"></textarea>
+							</li>
+						</ul>
+						</div>
+						<br />
+						<div class="mui-bar-nav">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a href="javascript:;" class="mui-text-center">
+									+增加报修项目
+								</a>
+							</li>
+						</ul>
+						</div>
+						<br />
+						<div>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a href="javascript:;" id="submit" class="mui-text-center">
+									确认下单
+								</a>
+							</li>
+						</ul>
+						</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
