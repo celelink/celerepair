@@ -112,10 +112,15 @@
 			.f-orange {
 				color: #ff5700!important
 			}
+			
 			.f-blank {
 				color: #000!important
 			}
-			.content{padding:0 15px}
+			
+			.content {
+				padding: 0 15px
+			}
+			
 			.content .about {
 				padding: 10px 0 0;
 			}
@@ -128,11 +133,40 @@
 			.exit .mui-table-view-cell>a:not(.mui-btn) {
 				margin-right: 0
 			}
-			.order-title{padding:0 0 5px 0}
-			.orderNew{padding:0 15px}
-			.orderNew .mui-icon{font-size: 16PX;}
-			.orderNew .mui-table-view-cell:after{left:0}
-			#submit{background:#ff5700;color:#fff;border-radius: 5px;}
+			
+			.order-title {
+				padding: 0 0 5px 0
+			}
+			
+			.orderNew {
+				padding: 0 15px
+			}
+			
+			.orderNew .mui-icon {
+				font-size: 16PX;
+			}
+			
+			.orderNew .mui-table-view-cell:after {
+				left: 0
+			}
+			
+			#submit {
+				background: #ff5700;
+				color: #fff;
+				border-radius: 5px;
+			}
+			
+			.mui-opacity {
+				opacity: 0;
+			}
+			
+			.mui-vertical {
+				position: absolute;
+				left: 50%;
+				-webkit-transform: translate(-50%, 0);
+				-ms-transform: translate(-50%, 0);
+				transform: translate(-50%, 0);
+			}
 		</style>
 	</head>
 
@@ -144,66 +178,82 @@
 				<a href="message.html" class="mui-pull-right">
 				</a>
 			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-inner-wrap">
 				<div class="mui-scroll">
 					<div class="content">
 						<p class="about  mui-text-center">个人用户可在此报修，请填写需求内容<br />我们会尽快安排工作人员上门服务</p>
 						<div class="mui-bar-nav">
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right mui-icon mui-icon-location">
-									报修地址
-								</a>
-							</li>
-						</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right mui-icon mui-icon-location">
+										报修地址
+									</a>
+								</li>
+							</ul>
 						</div>
 						<br>
 						<div class="mui-bar-nav">
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right mui-icon mui-icon-location">
-									报修类型
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right mui-icon mui-icon-location">
-									上门时间
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<p class="order-title">你可以上传多张报修图片:</p>
-								<input accept="image/*" type="file" >
-							</li>
-							<li class="mui-table-view-cell">
-								<p class="order-title">请对报修项目进行描述:</p>
-								<textarea name="" rows="5" cols="5"></textarea>
-							</li>
-						</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right mui-icon mui-icon-location">
+										报修类型
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right mui-icon mui-icon-location">
+										上门时间
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="order-title">你可以上传多张报修图片:</p>
+									<a href="#picture" class="mui-btn" style="padding: 5px 20px;">添加</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="order-title">请对报修项目进行描述:</p>
+									<textarea name="" rows="5" cols="5"></textarea>
+								</li>
+							</ul>
 						</div>
 						<br />
 						<div class="mui-bar-nav">
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a href="javascript:;" class="mui-text-center">
-									+增加报修项目
-								</a>
-							</li>
-						</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a href="javascript:;" class="mui-text-center">
+										+增加报修项目
+									</a>
+								</li>
+							</ul>
 						</div>
 						<br />
 						<div>
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a href="javascript:;" id="submit" class="mui-text-center">
-									确认下单
-								</a>
-							</li>
-						</ul>
-						</div>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a href="javascript:;" id="submit" class="mui-text-center">
+										确认下单
+									</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<h4 class="mui-vertical">拍照或录像</h4>
+					<input type="file" name="picture" id="picture" value="" class="mui-opacity" capture="camera"/>
+				</li>
+				<li class="mui-table-view-cell">
+					<h4 class="mui-vertical">选取现有的</h4>
+					<input type="file" name="picture" id="picture" value="" class="mui-opacity" accept="image/*"/>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" class=""><b>取消</b></a>
+				</li>
+			</ul>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
@@ -221,6 +271,34 @@
 					});
 				});
 			}
+			//启动滑动操作
+			mui(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+
+			});
+
+			mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+
+			mui('body').on('tap', '.mui-popover-action li>a', function() {
+				var a = this,
+					parent;
+				//根据点击按钮，反推当前是哪个actionsheet
+				for(parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+					if(parent.classList.contains('mui-popover-action')) {
+						break;
+					}
+				}
+				//关闭actionsheet
+				mui('#' + parent.id).popover('toggle');
+			})
 		</script>
 	</body>
 
