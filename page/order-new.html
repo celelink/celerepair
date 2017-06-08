@@ -13,6 +13,7 @@
 		<link href="../css/css/mui.picker.css" rel="stylesheet" />
 		<link href="../css/css/mui.poppicker.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../upload/webuploader.css" />
 		<style>
 			html,
 			body {
@@ -125,7 +126,7 @@
 			}
 			
 			.content .about {
-				padding: 10px 0 0;
+				padding: 10px 0 10px;
 			}
 			/*控制退出的样式*/
 			
@@ -135,10 +136,6 @@
 			
 			.exit .mui-table-view-cell>a:not(.mui-btn) {
 				margin-right: 0
-			}
-			
-			.order-title {
-				padding: 0 0 5px 0
 			}
 			
 			.orderNew {
@@ -219,6 +216,7 @@
 				height: 100%;
 				z-index: 1;
 			}
+			
 			.ui-alert {
 				text-align: center;
 				padding: 20px 10px;
@@ -257,12 +255,12 @@
 									</a>
 								</li>
 								<li class="mui-table-view-cell demo3">
-									<a href="javascript:;" id="demo3"  data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="mui-navigate-right mui-icon mui-icon-location">
+									<a href="javascript:;" id="demo3" data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="mui-navigate-right mui-icon mui-icon-location">
 										上门时间
 									</a>
 								</li>
 								<li class="mui-table-view-cell">
-									<p class="order-title">你可以上传多张报修图片:</p>
+									<!--<p class="order-title">你可以上传多张报修图片:</p>
 									<div id="picture-list" class="picture-content mui-inline">
 										<a href="javascript:;" class="mui-btn cross">
 											<img src="../images/cbd.jpg" />
@@ -279,6 +277,25 @@
 									</div>
 									<div class="picture-content mui-inline">
 										<a href="#picture" class="mui-btn cross crossClick"></a>
+									</div>-->
+									<div id="wrapper">
+										<p class="order-title">你可以上传多张报修图片:</p>
+										<div id="container">
+											<!--头部，相册选择和格式选择-->
+											<div id="uploader">
+												<div class="queueList">
+													<div id="dndArea" class="placeholder">
+														<div id="filePicker"></div>
+													</div>
+												</div>
+												<div class="statusBar" style="display:none;">
+													<div class="btns">
+														<div id="filePicker2"></div>
+														<div class="uploadBtn">开始上传</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</li>
 								<li class="mui-table-view-cell">
@@ -334,6 +351,10 @@
 		<script src="../js/js/mui.poppicker.js"></script>
 		<script src="../js/js/city.data.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/js/mui.picker.min.js"></script>
+		<script src="../upload/jquery.js"></script>
+		<script src="../upload/webuploader.js"></script>
+		<script src="../upload/html2canvas.js"></script>
+		<script src="../upload/upload.js"></script>
 		<script>
 			mui.init();
 			mui.init({
@@ -375,7 +396,7 @@
 				//关闭actionsheet
 				mui('#' + parent.id).popover('toggle');
 			})
-			
+
 			//控制上传图片的自适应宽度
 			mui(function($) {
 				var arr = document.querySelectorAll('.cross');
@@ -385,19 +406,19 @@
 
 			});
 
-			mui(function(e) {
-				var picturChild = document.getElementById('picture-list').children.length;
-				if(picturChild/4!=1){
-					document.querySelectorAll('.crossClick')[0].style.margin='0 0 1% 1%';//控制添加按钮的样式的微调
-				}
-				
-			})
+			//			mui(function(e) {
+			//				var picturChild = document.getElementById('picture-list').children.length;
+			//				if(picturChild/4!=1){
+			//					document.querySelectorAll('.crossClick')[0].style.margin='0 0 1% 1%';//控制添加按钮的样式的微调
+			//				}
+			//				
+			//			})
 			//增加项目类型
 			mui('body').on('tap', '.add', function() {
 				console.log("点击增加按钮")
 			})
 		</script>
-		
+
 		<script>
 			(function($, doc) {
 				$.init();
@@ -420,7 +441,7 @@
 				});
 			})(mui, document);
 		</script>
-		
+
 		<script>
 			(function($) {
 				$.init();
