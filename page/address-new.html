@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>地址管理</title>
+		<title>新增地址</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -15,6 +15,7 @@
 			body {
 				background-color: #efeff4;
 			}
+			
 			/*p {
 				text-indent: 22px;
 			}*/
@@ -62,11 +63,7 @@
 				background: #92b0dd;
 				border-radius: 10px;
 			}
-			
-			#offCanvasSideScroll {
-				padding-top: 44px
-			}
-			
+			#offCanvasSideScroll{padding-top:44px}
 			.mui-repair-left {
 				margin-right: 4%;
 				background: #e0b6b6;
@@ -91,40 +88,28 @@
 			.bg-orange {
 				background-color: #ff5700!important;
 			}
-			
-			.userImg {
+			.userImg{
 				position: absolute;
 				top: 0;
-				right: 40px;
+				right:40px;
 				height: 43px;
-				padding: 3px 0;
+				padding:3px 0;
 			}
-			
-			.mui-position-right {
+			.mui-position-right{
 				position: absolute;
 				right: 40px;
 			}
-			
-			.mui-bar {
-				background-color: #ff5700
-			}
-			
+			.mui-bar{background-color:#ff5700}
 			.f-orange {
 				color: #ff5700!important
 			}
-			
-			.content .about {
-				padding: 10px 0 0;
+			.content{padding-top:30%}
+			.content .about{
+				padding:10px 0 0;
 			}
 			/*控制退出的样式*/
-			
-			.exit .mui-table-view-cell {
-				padding-right: 0
-			}
-			
-			.exit .mui-table-view-cell>a:not(.mui-btn) {
-				margin-right: 0
-			}
+			.exit .mui-table-view-cell{padding-right:0}
+			.exit .mui-table-view-cell>a:not(.mui-btn){margin-right:0}
 		</style>
 	</head>
 
@@ -132,53 +117,33 @@
 		<div id="">
 			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
-				<h1 class="mui-title">地址管理</h1>
-				<a href="address-new.html" class="mui-btn mui-btn-link mui-pull-right f-white">新增地址</a>
+				<h1 class="mui-title">新增地址</h1>
 			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-				<div id="addressList">
-					<div class="mui-card">
-						<div class="mui-card-content">
-							<div class="mui-card-content-inner">
-								<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
-									<tbody>
-										<tr>
-											<td style="width:50%">联系人：celelink-sean</td>
-										</tr>
-										<tr>
-											<td style="width:50%">联系电话：15000946761</td>
-										</tr>
-										<tr>
-											<td colspan="2">联系地址：上海市松江区车墩镇</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="mui-card-footer">
-							<a class="mui-card-link">设为默认</a>
-							<a class="mui-card-link">编辑 删除</a>
-						</div>
-					</div>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
+				<div class="content">
+					<img src="../images/logo.png"/>
+					<p class="about">快修 旨在精益求精</p>
+					<p>1.0.0</p>
 				</div>
 			</div>
-			<script src="../js/mui.min.js"></script>
-			<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
-			<script>
-				mui.init();
-				mui.init({
-					swipeBack: true //启用右滑关闭功能
-				});
-				//实现ios平台原生侧滑关闭页面；
-				if(mui.os.plus && mui.os.ios) {
-					mui.plusReady(function() {
-						//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
-						plus.webview.currentWebview().setStyle({
-							'popGesture': 'none'
-						});
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
+		<script>
+			mui.init();
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			//实现ios平台原生侧滑关闭页面；
+			if(mui.os.plus && mui.os.ios) {
+				mui.plusReady(function() {
+					//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
+					plus.webview.currentWebview().setStyle({
+						'popGesture': 'none'
 					});
-				}
-			</script>
+				});
+			}
+		</script>
 	</body>
 
 </html>
