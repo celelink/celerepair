@@ -15,7 +15,6 @@
 			body {
 				background-color: #efeff4;
 			}
-			
 			/*p {
 				text-indent: 22px;
 			}*/
@@ -63,7 +62,11 @@
 				background: #92b0dd;
 				border-radius: 10px;
 			}
-			#offCanvasSideScroll{padding-top:44px}
+			
+			#offCanvasSideScroll {
+				padding-top: 44px
+			}
+			
 			.mui-repair-left {
 				margin-right: 4%;
 				background: #e0b6b6;
@@ -88,28 +91,92 @@
 			.bg-orange {
 				background-color: #ff5700!important;
 			}
-			.userImg{
+			
+			.userImg {
 				position: absolute;
 				top: 0;
-				right:40px;
+				right: 40px;
 				height: 43px;
-				padding:3px 0;
+				padding: 3px 0;
 			}
-			.mui-position-right{
+			
+			.mui-position-right {
 				position: absolute;
 				right: 40px;
 			}
-			.mui-bar{background-color:#ff5700}
+			
+			.mui-bar {
+				background-color: #ff5700
+			}
+			
 			.f-orange {
 				color: #ff5700!important
 			}
-			.content{padding-top:30%}
-			.content .about{
-				padding:10px 0 0;
+			
+			.content {
+				padding-top: 30%
+			}
+			
+			.content .about {
+				padding: 10px 0 0;
 			}
 			/*控制退出的样式*/
-			.exit .mui-table-view-cell{padding-right:0}
-			.exit .mui-table-view-cell>a:not(.mui-btn){margin-right:0}
+			
+			.exit .mui-table-view-cell {
+				padding-right: 0
+			}
+			
+			.exit .mui-table-view-cell>a:not(.mui-btn) {
+				margin-right: 0
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				left: 0
+			}
+			
+			.top-border:before {
+				position: absolute;
+				right: 0;
+				top: 0;
+				left: 0;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;
+			}
+			
+			.mui-btn,
+			button,
+			input[type=button],
+			input[type=reset],
+			input[type=submit] {
+				padding: 6px 42%
+			}
+			
+			input {
+				color: #000
+			}
+			
+			::-webkit-input-placeholder {
+				/* WebKit browsers */
+				color: #ccc;
+			}
+			
+			:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18 */
+				color: #ccc;
+			}
+			
+			::-moz-placeholder {
+				/* Mozilla Firefox 19+ */
+				color: #ccc;
+			}
+			
+			:-ms-input-placeholder {
+				/* Internet Explorer 10+ */
+				color: #ccc;
+			}
 		</style>
 	</head>
 
@@ -119,12 +186,26 @@
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
 				<h1 class="mui-title">新增地址</h1>
 			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
-				<div class="content">
-					<img src="../images/logo.png"/>
-					<p class="about">快修 旨在精益求精</p>
-					<p>1.0.0</p>
-				</div>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>联系地址:</label>
+						<input type="text" placeholder="请输入详细地址" class="mui-text-right">
+					</div>
+					<br />
+					<div class="mui-input-row top-border">
+						<label>联系人:</label>
+						<input type="text" class="mui-input-clear mui-text-right" placeholder="请输入联系人" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+					</div>
+					<div class="mui-input-row">
+						<label>联系电话:</label>
+						<input type="text" class="mui-input-clear mui-text-right" placeholder="请输入联系电话" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+					</div>
+
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn bg-orange f-white" onclick="return false;">确认</button>
+					</div>
+				</form>
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>

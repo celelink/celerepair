@@ -84,6 +84,10 @@
 				color: #fff!important
 			}
 			
+			.f-blank {
+				color: #000!important
+			}
+			
 			.f-14 {
 				font-size: 14px!important;
 			}
@@ -125,6 +129,36 @@
 			.exit .mui-table-view-cell>a:not(.mui-btn) {
 				margin-right: 0
 			}
+			
+			.mui-checkbox.mui-left label,
+			.mui-radio.mui-left label {
+				padding-left: 25px
+			}
+			
+			.mui-checkbox.mui-left input[type=checkbox],
+			.mui-radio.mui-left input[type=radio] {
+				left: 0;
+				top: 50%;
+				width: 20px;
+				height: 20px;
+				-webkit-transform: translate(0, -50%);
+				-ms-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+			}
+			
+			.mui-checkbox input[type=checkbox]:before,
+			.mui-radio input[type=radio]:before {
+				font-size: 20px
+			}
+			
+			.mui-checkbox input[type=checkbox]:checked:before,
+			.mui-radio input[type=radio]:checked:before {
+				color: #ff5700
+			}
+			
+			.mui-card-content-inner {
+				padding: 10px 15px
+			}
 		</style>
 	</head>
 
@@ -135,49 +169,134 @@
 				<h1 class="mui-title">地址管理</h1>
 				<a href="address-new.html" class="mui-btn mui-btn-link mui-pull-right f-white">新增地址</a>
 			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-				<div id="addressList">
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-inner-wrap">
+				<div id="addressList" class="mui-scroll">
 					<div class="mui-card">
-						<div class="mui-card-content">
-							<div class="mui-card-content-inner">
-								<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
-									<tbody>
-										<tr>
-											<td style="width:50%">联系人：celelink-sean</td>
-										</tr>
-										<tr>
-											<td style="width:50%">联系电话：15000946761</td>
-										</tr>
-										<tr>
-											<td colspan="2">联系地址：上海市松江区车墩镇</td>
-										</tr>
-									</tbody>
-								</table>
+						<form class="mui-input-group">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
+										<tbody>
+											<tr>
+												<td style="width:50%">联系人：celelink-sean</td>
+											</tr>
+											<tr>
+												<td style="width:50%">联系电话：15000946761</td>
+											</tr>
+											<tr>
+												<td colspan="2">联系地址：上海市松江区车墩镇</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
-						</div>
-						<div class="mui-card-footer">
-							<a class="mui-card-link">设为默认</a>
-							<a class="mui-card-link">编辑 删除</a>
-						</div>
+							<div class="mui-card-footer">
+								<a class="mui-card-link">
+									<div class="mui-input-row mui-checkbox mui-left">
+										<label class="f-blank">设为默认</label>
+										<input name="checkbox" value="Item 1" type="checkbox">
+									</div>
+								</a>
+								<div class="mui-card-link">
+									<a class="f-orange">
+										<span class="mui-icon mui-icon-compose f-orange"></span> 编辑
+									</a>
+									<a class="f-blank">
+										<span class="mui-icon mui-icon-trash f-blank"></span> 删除
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="mui-card">
+						<form class="mui-input-group">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
+										<tbody>
+											<tr>
+												<td style="width:50%">联系人：celelink-sean</td>
+											</tr>
+											<tr>
+												<td style="width:50%">联系电话：15000946761</td>
+											</tr>
+											<tr>
+												<td colspan="2">联系地址：上海市松江区车墩镇</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="mui-card-footer">
+								<a class="mui-card-link">
+									<div class="mui-input-row mui-checkbox mui-left">
+										<label class="f-blank">设为默认</label>
+										<input name="checkbox" value="Item 1" type="checkbox">
+									</div>
+								</a>
+								<div class="mui-card-link">
+									<a class="f-orange">
+										<span class="mui-icon mui-icon-compose f-orange"></span> 编辑
+									</a>
+									<a class="f-blank">
+										<span class="mui-icon mui-icon-trash f-blank"></span> 删除
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="mui-card">
+						<form class="mui-input-group">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
+										<tbody>
+											<tr>
+												<td style="width:50%">联系人：celelink-sean</td>
+											</tr>
+											<tr>
+												<td style="width:50%">联系电话：15000946761</td>
+											</tr>
+											<tr>
+												<td colspan="2">联系地址：上海市松江区车墩镇</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="mui-card-footer">
+								<a class="mui-card-link">
+									<div class="mui-input-row mui-checkbox mui-left">
+										<label class="f-blank">设为默认</label>
+										<input name="checkbox" value="Item 1" type="checkbox">
+									</div>
+								</a>
+								<div class="mui-card-link">
+									<a class="f-orange">
+										<span class="mui-icon mui-icon-compose f-orange"></span> 编辑
+									</a>
+									<a class="f-blank">
+										<span class="mui-icon mui-icon-trash f-blank"></span> 删除
+									</a>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
 			<script src="../js/mui.min.js"></script>
 			<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 			<script>
-				mui.init();
 				mui.init({
 					swipeBack: true //启用右滑关闭功能
 				});
-				//实现ios平台原生侧滑关闭页面；
-				if(mui.os.plus && mui.os.ios) {
-					mui.plusReady(function() {
-						//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
-						plus.webview.currentWebview().setStyle({
-							'popGesture': 'none'
-						});
-					});
-				}
+				//设置为默认的复选框
+				mui('.mui-input-group').on('change', 'input', function() {
+					var value = this.checked ? "true" : "false";
+					alert("checked：" + value);
+				});
+				//初始化单页的区域滚动
+				mui('.mui-scroll-wrapper').scroll();
 			</script>
 	</body>
 
