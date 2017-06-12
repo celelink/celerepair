@@ -222,6 +222,10 @@
 				padding: 20px 10px;
 				font-size: 16px;
 			}
+			
+			.mui-table-view {
+				margin-bottom: 10px
+			}
 		</style>
 	</head>
 
@@ -236,94 +240,77 @@
 			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-inner-wrap">
 				<div class="mui-scroll">
 					<div class="content">
-						<p class="about  mui-text-center">个人用户可在此报修，请填写需求内容<br />我们会尽快安排工作人员上门服务</p>
-						<div class="mui-bar-nav">
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-									<a href="address.html" class="mui-navigate-right mui-icon mui-icon-location">
-										报修地址
-									</a>
-								</li>
-							</ul>
-						</div>
-						<br>
-						<div class="mui-bar-nav">
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-									<a href="javascript:;" id="showCityPicker" class="mui-navigate-right mui-icon mui-icon-location">
-										报修类型
-									</a>
-								</li>
-								<li class="mui-table-view-cell demo3">
-									<a href="javascript:;" id="demo3" data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="mui-navigate-right mui-icon mui-icon-location">
-										上门时间
-									</a>
-								</li>
-								<li class="mui-table-view-cell">
-									<!--<p class="order-title">你可以上传多张报修图片:</p>
-									<div id="picture-list" class="picture-content mui-inline">
-										<a href="javascript:;" class="mui-btn cross">
-											<img src="../images/cbd.jpg" />
+						<form action="" method="post">
+							<p class="about  mui-text-center">个人用户可在此报修，请填写需求内容<br />我们会尽快安排工作人员上门服务</p>
+							<div class="mui-bar-nav">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<a href="address.html" class="mui-navigate-right mui-icon mui-icon-location">
+											报修地址
 										</a>
-										<a href="javascript:;" class="mui-btn cross">
-											<img src="../images/cbd.jpg" />
+									</li>
+								</ul>
+							</div>
+							<div class="mui-bar-nav" id="orderList">
+								<ul class="mui-table-view list-0">
+									<li class="mui-table-view-cell">
+										<a href="javascript:;" class="mui-navigate-right mui-icon mui-icon-location showCityPicker">
+											报修类型
 										</a>
-										<a href="javascript:;" class="mui-btn cross">
-											<img src="../images/cbd.jpg" />
+									</li>
+									<li class="mui-table-view-cell demo3">
+										<a href="javascript:;" id="demo3" data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="mui-navigate-right mui-icon mui-icon-location">
+											上门时间
 										</a>
-										<a href="javascript:;" class="mui-btn cross">
-											<img src="../images/cbd.jpg" />
-										</a>
-									</div>
-									<div class="picture-content mui-inline">
-										<a href="#picture" class="mui-btn cross crossClick"></a>
-									</div>-->
-									<div id="wrapper">
-										<p class="order-title">你可以上传多张报修图片:</p>
-										<div id="container">
-											<!--头部，相册选择和格式选择-->
-											<div id="uploader">
-												<div class="queueList">
-													<div id="dndArea" class="placeholder">
-														<div id="filePicker"></div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div id="wrapper">
+											<p class="order-title">你可以上传多张报修图片:</p>
+											<div id="container">
+												<!--头部，相册选择和格式选择-->
+												<div id="uploader">
+													<div class="queueList">
+														<div id="dndArea" class="placeholder">
+															<div id="filePicker"></div>
+														</div>
 													</div>
-												</div>
-												<div class="statusBar" style="display:none;">
-													<div class="btns">
-														<div id="filePicker2"></div>
-														<div class="uploadBtn">开始上传</div>
+													<div class="statusBar" style="display:none;">
+														<div class="btns">
+															<div id="filePicker2"></div>
+															<div class="uploadBtn">开始上传</div>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li class="mui-table-view-cell">
-									<p class="order-title">请对报修项目进行描述:</p>
-									<textarea name="" rows="5" cols="5"></textarea>
-								</li>
-							</ul>
-						</div>
-						<br />
-						<div class="mui-bar-nav">
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-									<a href="javascript:;" class="mui-text-center add">
-										+增加报修项目
-									</a>
-								</li>
-							</ul>
-						</div>
-						<br />
-						<div>
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-									<a href="javascript:;" id="submit" class="mui-text-center">
-										确认下单
-									</a>
-								</li>
-							</ul>
-						</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<p class="order-title">请对报修项目进行描述:</p>
+										<textarea name="" rows="5" cols="5"></textarea>
+									</li>
+								</ul>
+							</div>
+							<br />
+							<div class="mui-bar-nav">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<a href="javascript:;" class="mui-text-center add">
+											+增加报修项目
+										</a>
+									</li>
+								</ul>
+							</div>
+							<br />
+							<div>
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<a href="javascript:;" id="submit" class="mui-text-center">
+											确认下单
+										</a>
+									</li>
+								</ul>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -357,6 +344,7 @@
 		<script src="../upload/upload.js"></script>
 		<script>
 			mui.init();
+			var i = 0;
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -415,7 +403,75 @@
 			//			})
 			//增加项目类型
 			mui('body').on('tap', '.add', function() {
-				console.log("点击增加按钮")
+				var table = document.body.querySelector('#orderList'),
+					ul = document.createElement('ul');
+				i++;
+				ul.classList.add('mui-table-view');
+				ul.classList.add('list-' + i);
+				ul.innerHTML = ('<li class="mui-table-view-cell">' +
+					'<a href="javascript:;" class="mui-navigate-right mui-icon mui-icon-location showCityPicker">' +
+					'报修类型' +
+					'</a>' +
+					'</li>' +
+					'<li class="mui-table-view-cell demo3">' +
+					'<a href="javascript:;" data-options=' + {
+						"value": "2015-10-10 10:10",
+						"beginYear": 2010,
+						"endYear": 2020
+					} + ' class="mui-navigate-right mui-icon mui-icon-location">' +
+					'上门时间' +
+					'</a>' +
+					'</li>' +
+					'<li class="mui-table-view-cell">' +
+					'<div id="wrapper">' +
+					'<p class="order-title">你可以上传多张报修图片:</p>' +
+					'<div id="container">' +
+					'<div id="uploader">' +
+					'<div class="queueList">' +
+					'<div id="dndArea" class="placeholder">' +
+					'<div id="filePicker"></div>' +
+					'</div></div>' +
+					'<div class="statusBar" style="display:none;">' +
+					'<div class="btns">' +
+					'<div id="filePicker2"></div>' +
+					'<div class="uploadBtn">开始上传</div>' +
+					'</div></div></div></div></div></li>' +
+					'<li class="mui-table-view-cell">' +
+					'<p class="order-title">请对报修项目进行描述:</p>' +
+					'<textarea name="" rows="5" cols="5"></textarea>' +
+					'</li>');
+				table.appendChild(ul);
+				// 实例化
+				uploader = WebUploader.create({
+					pick: {
+						id: '#filePicker'+i,
+						label: '点击选择图片'
+					},
+					formData: {
+						attachmentFile: 111,
+						attachmentType: 2
+					},
+					dnd: '#dndArea'+i,
+					paste: '#uploader'+i,
+					swf: '../../dist/Uploader.swf',
+					chunked: false,
+					compress: null,
+					auto: false,
+					fileNumLimit: 20,
+					chunkSize: 512 * 1024,
+					server: 'http://116.62.48.143/celefix/backend/base/saveImg',
+					//server: 'http://127.0.0.1:8000/celefix/backend/base/saveAttachment',
+					// runtimeOrder: 'flash',
+					accept: {
+						title: 'Images',
+						extensions: 'gif,jpg,jpeg,bmp,png',
+						mimeTypes: 'image/*'
+					},
+					// 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+					disableGlobalDnd: true,
+					fileSizeLimit: 200 * 1024 * 1024, // 200 M
+					fileSingleSizeLimit: 50 * 1024 * 1024 // 50 M
+				});
 			})
 		</script>
 
@@ -428,11 +484,8 @@
 						layer: 2
 					});
 					cityPicker.setData(cityData);
-					var showCityPickerButton = doc.getElementById('showCityPicker');
-					var cityResult = doc.getElementById('cityResult');
-					showCityPickerButton.addEventListener('tap', function(event) {
+					mui('body').on('tap', '.showCityPicker', function(event) {
 						cityPicker.show(function(items) {
-							//cityResult.innerText = "你选择的城市是:" + items[0].text + " " + items[1].text;
 							alert("你选择的项目是:" + items[0].text + " " + items[1].text);
 							//返回 false 可以阻止选择框的关闭
 							//return false;
@@ -447,7 +500,7 @@
 				$.init();
 				var btns = $('.demo3');
 				btns.each(function(i, btn) {
-					btn.addEventListener('tap', function() {
+					mui('body').on('tap', '.demo3', function() {
 						var optionsJson = this.getAttribute('data-options') || '{}';
 						var options = JSON.parse(optionsJson);
 						var id = this.getAttribute('id');
@@ -467,7 +520,7 @@
 							 * rs.h 时，用法同年
 							 * rs.i 分（minutes 的第二个字母），用法同年
 							 */
-							alert('选择结果: ' + rs.text);
+							alert('选择结果: ' + rs.y.text + rs.m.text + rs.d.text + rs.h.text);
 							/* 
 							 * 返回 false 可以阻止选择框的关闭
 							 * return false;
