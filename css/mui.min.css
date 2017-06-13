@@ -547,6 +547,10 @@ p {
 	width: 25%
 }
 
+.mui-col-xs-25 {
+	width: 20%
+}
+
 .mui-col-xs-2 {
 	width: 16.66666667%
 }
@@ -600,7 +604,7 @@ p {
 	top: 0;
 	bottom: 0;
 	left: 0;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	width: 100%
 }
 
@@ -2075,8 +2079,8 @@ input[type=submit]:enabled:active {
 
 .mui-table-view .mui-media-object {
 	line-height: 42px;
-	max-width: 42px;
-	height: 42px
+	max-width: 80px;
+	height: 80px
 }
 
 .mui-table-view .mui-media-object.mui-pull-left {
@@ -3711,7 +3715,7 @@ body>.mui-progressbar {
 .mui-slider {
 	position: relative;
 	z-index: 1;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	width: 100%
 }
 
@@ -3721,7 +3725,7 @@ body>.mui-progressbar {
 
 .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
 	border-top: 1px solid #c8c7cc;
-	border-bottom: 1px solid #c8c7cc
+	/*border-bottom: 1px solid #c8c7cc*/
 }
 
 .mui-slider .mui-slider-group {
@@ -4674,14 +4678,27 @@ body>.mui-progressbar {
 	border: 0
 }
 ::-webkit-input-placeholder { /* WebKit browsers */ 
-color: #fff; 
+color: #ccc; 
 } 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
-color: #fff; 
+color: #ccc; 
 } 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
-color: #fff; 
+color: #ccc; 
 } 
 :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #ccc; 
+} 
+
+#login ::-webkit-input-placeholder,#register ::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #fff; 
+} 
+#login :-moz-placeholder,#register :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #fff; 
+} 
+#login ::-moz-placeholder,#register ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #fff; 
+} 
+#login :-ms-input-placeholder,#register :-ms-input-placeholder { /* Internet Explorer 10+ */ 
 color: #fff; 
 } 

@@ -14,20 +14,11 @@
 			html,
 			body {
 				background-color: #efeff4;
+				font-size: 14px;
 			}
-			
 			/*p {
 				text-indent: 22px;
 			}*/
-			
-			span.mui-icon {
-				font-size: 20px;
-				color: #fff;
-			}
-			
-			.mui-off-canvas-left {
-				color: #fff;
-			}
 			
 			.title {
 				margin: 35px 15px 10px;
@@ -41,8 +32,12 @@
 				line-height: 24px;
 			}
 			
-			input {
-				color: #fff;
+			.f-white {
+				color: #fff!important
+			}
+			
+			.bg-white {
+				background: #fff
 			}
 			
 			.userPic {
@@ -54,85 +49,258 @@
 				transform: translate(-50%, -50%);
 			}
 			
-			.mui-repair {
-				width: 44%;
-				padding: 4% 0;
-				margin: 0 0 0 4%;
-				color: #fff;
-				border: 0;
-				background: #92b0dd;
-				border-radius: 10px;
-			}
-			#offCanvasSideScroll{padding-top:44px}
-			.mui-repair-left {
-				margin-right: 4%;
-				background: #e0b6b6;
+			#offCanvasSideScroll {
+				padding-top: 44px
 			}
 			
-			.mui-repair-right {
-				margin-left: -6px
+			.content {
+				margin: 0 15px 10px;
+				padding: 40px 0;
+				position: relative;
+				overflow: hidden;
+				z-index: 1
 			}
 			
-			.textA {
-				vertical-align: middle
+			.order-line {
+				float: left;
+				position: relative;
+				width: 20%;
+				text-align: center;
 			}
 			
-			.f-white {
-				color: #fff!important
+			.order-line img {
+				width: 60%
 			}
 			
-			.f-14 {
-				font-size: 14px!important;
-			}
-			
-			.bg-orange {
-				background-color: #ff5700!important;
-			}
-			.userImg{
+			.order-line p {
 				position: absolute;
-				top: 0;
-				right:40px;
-				height: 43px;
-				padding:3px 0;
+				top: -20px;
+				left: 50%;
+				-webkit-transform: translate(-50%, 0);
+				-ms-transform: translate(-50%, 0);
+				transform: translate(-50%, 0);
+				font-size: 12px;
+				width: 100%
 			}
-			.mui-position-right{
+			
+			#line-active,
+			.line {
 				position: absolute;
-				right: 40px;
+				left: 0;
+				top: 50%;
+				-webkit-transform: translate(0, -50%);
+				-ms-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				width: 100%;
+				height: 8px;
+				z-index: -2;
+				background-color: #ccc;
 			}
-			.mui-bar{background-color:#ff5700}
-			.f-orange {
-				color: #ff5700!important
+			
+			#line-active {
+				background: #ff5700;
+				z-index: -1;
+				width: 50%;
 			}
-			.content{padding-top:30%}
-			.content .about{
-				padding:10px 0 0;
+			
+			.active p {
+				top: 36px;
+				color: #ff5700;
 			}
-			/*控制退出的样式*/
-			.exit .mui-table-view-cell{padding-right:0}
-			.exit .mui-table-view-cell>a:not(.mui-btn){margin-right:0}
+			
+			.order-img ul {
+				padding: 0
+			}
+			
+			.order-img li {
+				float: left;
+				list-style: none;
+				width: 25%;
+				padding: 0 5px 10px 5px;
+			}
+			
+			.order-img ul li img {
+				width: 100%
+			}
+			
+			tbody td {
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			
+			tbody tr td p {
+				width: 35%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.active img {
+				animation: myfirst 6s linear infinite;
+				-moz-animation: myfirst 6s linear infinite;
+				-webkit-animation: myfirst 6s linear infinite;
+				-o-animation: myfirst 6s linear infinite;
+			}
+			
+			@keyframes myfirst {
+				from {
+					transform: rotate(0);
+					-ms-transform: rotate(0);
+					-webkit-transform: rotate(0);
+					-o-transform: rotate(0);
+					-moz-transform: rotate(0)
+				}
+				to {
+					transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					-webkit-transform: rotate(360deg);
+					-o-transform: rotate(360deg);
+					-moz-transform: rotate(360deg)
+				}
+			}
+			
+			@-moz-keyframes myfirst {
+				from {
+					transform: rotate(0);
+					-ms-transform: rotate(0);
+					-webkit-transform: rotate(0);
+					-o-transform: rotate(0);
+					-moz-transform: rotate(0)
+				}
+				to {
+					transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					-webkit-transform: rotate(360deg);
+					-o-transform: rotate(360deg);
+					-moz-transform: rotate(360deg)
+				}
+			}
+			
+			@-webkit-keyframes myfirst {
+				from {
+					transform: rotate(0);
+					-ms-transform: rotate(0);
+					-webkit-transform: rotate(0);
+					-o-transform: rotate(0);
+					-moz-transform: rotate(0)
+				}
+				to {
+					transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					-webkit-transform: rotate(360deg);
+					-o-transform: rotate(360deg);
+					-moz-transform: rotate(360deg)
+				}
+			}
+			
+			@-o-keyframes myfirst {
+				from {
+					transform: rotate(0);
+					-ms-transform: rotate(0);
+					-webkit-transform: rotate(0);
+					-o-transform: rotate(0);
+					-moz-transform: rotate(0)
+				}
+				to {
+					transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					-webkit-transform: rotate(360deg);
+					-o-transform: rotate(360deg);
+					-moz-transform: rotate(360deg)
+				}
+			}
 		</style>
 	</head>
 
 	<body>
 		<div id="">
 			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
-				<a href="index.html" class="mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
 				<h1 class="mui-title">订单详情</h1>
 				<a href="message.html" class="mui-pull-right">
 				</a>
 			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
-				<div class="content">
-					<img src="../images/logo.png"/>
-					<p class="about">快修 旨在精益求精</p>
-					<p>1.0.0</p>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<div class="bg-white">
+					<div class="content">
+						<div class="order-line" style="text-align: left;">
+							<img src="../images/not-order.png" />
+							<p>已下单</p>
+						</div>
+						<div class="order-line">
+							<p>待审核</p>
+							<img src="../images/not-audit.png" />
+						</div>
+						<div class="order-line">
+							<p>待上门</p>
+							<img src="../images/not-visit.png" />
+						</div>
+						<div class="order-line">
+							<p>待付款</p>
+							<img src="../images/not-pay.png" />
+						</div>
+						<div class="order-line" style="text-align: right;">
+							<p>待评价</p>
+							<img src="../images/not-evaluate.png" />
+						</div>
+						<span class="line"></span>
+						<span id="line-active"></span>
+					</div>
+				</div>
+				<div class="">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media bg-white">
+							订单详情
+						</li>
+						<li class="mui-table-view-cell mui-media bg-white">
+							<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
+								<tbody>
+									<tr>
+										<td style="width:23%">订单编号:</td>
+										<td style="width:77%">201706131432</td>
+									</tr>
+									<tr>
+										<td>门店名称:</td>
+										<td>快装-快修</td>
+									</tr>
+									<tr>
+										<td>门店地址:</td>
+										<td>上海市松江区车墩镇</td>
+									</tr>
+									<tr>
+										<td>店联系人:</td>
+										<td>
+											<p>上海市松江区车墩镇上海市松江区车墩镇上海市松江区车墩镇上海市松江区车墩镇上海市松江区车墩镇</p>
+										</td>
+									</tr>
+									<tr>
+										<td>联系电话:</td>
+										<td>15000946761</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+						<li class="mui-table-view-cell mui-media bg-white">
+							项目描述
+						</li>
+						<li class="mui-table-view-cell mui-media bg-white">
+							<div class="order-img">
+								<ul>
+									<li><img src="../images/logo.png" /></li>
+									<li><img src="../images/logo.png" /></li>
+									<li><img src="../images/logo.png" /></li>
+									<li><img src="../images/logo.png" /></li>
+									<li><img src="../images/logo.png" /></li>
+									<li><img src="../images/logo.png" /></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 		<script>
-			mui.init();
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -144,6 +312,27 @@
 						'popGesture': 'none'
 					});
 				});
+			};
+			mui.ajax({
+				url: 'http://index.php',
+				type: 'GET',
+				success: function(data) {
+					mui.toast(data);
+				},
+				error: function(xhr, type, errorThrown) {
+					mui.toast(type);
+				}
+			});
+			//状态的封装
+			cycle(2);
+			function cycle(a){
+				var arr=document.querySelectorAll('.content .order-line img');
+				var arr2=document.querySelectorAll('.content .order-line');
+				for(var i=0;i<=a;i++){
+					document.querySelector('#line-active').style.width=20*i+10+"%"
+					arr[i].setAttribute('src',arr[i].getAttribute('src').replace(/not/, "already"));
+				}
+				arr2[i-1].classList.add('active');
 			}
 		</script>
 	</body>

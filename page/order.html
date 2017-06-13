@@ -8,144 +8,250 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+		<!--标准mui.css-->
 		<link rel="stylesheet" href="../css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css" />-->
+	</head>
+
+	<body>
+
 		<style>
-			html,
-			body {
-				background-color: #efeff4;
+			.mui-control-content {
+				background-color: white;
+				min-height: 215px;
 			}
 			
-			/*p {
-				text-indent: 22px;
-			}*/
-			
-			span.mui-icon {
-				font-size: 20px;
-				color: #fff;
-			}
-			
-			.mui-off-canvas-left {
-				color: #fff;
-			}
-			
-			.title {
-				margin: 35px 15px 10px;
-			}
-			
-			.title+.content {
-				margin: 10px 15px 35px;
-				color: #bbb;
-				text-indent: 1em;
-				font-size: 14px;
-				line-height: 24px;
-			}
-			
-			input {
-				color: #fff;
-			}
-			
-			.userPic {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				-webkit-transform: translate(-50%, -50%);
-				-ms-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
-			}
-			
-			.mui-repair {
-				width: 44%;
-				padding: 4% 0;
-				margin: 0 0 0 4%;
-				color: #fff;
-				border: 0;
-				background: #92b0dd;
-				border-radius: 10px;
-			}
-			#offCanvasSideScroll{padding-top:44px}
-			.mui-repair-left {
-				margin-right: 4%;
-				background: #e0b6b6;
-			}
-			
-			.mui-repair-right {
-				margin-left: -6px
-			}
-			
-			.textA {
-				vertical-align: middle
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
 			}
 			
 			.f-white {
 				color: #fff!important
 			}
 			
-			.f-14 {
-				font-size: 14px!important;
-			}
-			
-			.bg-orange {
-				background-color: #ff5700!important;
-			}
-			.userImg{
-				position: absolute;
-				top: 0;
-				right:40px;
-				height: 43px;
-				padding:3px 0;
-			}
-			.mui-position-right{
-				position: absolute;
-				right: 40px;
-			}
-			.mui-bar{background-color:#ff5700}
 			.f-orange {
 				color: #ff5700!important
 			}
-			.content{padding-top:30%}
-			.content .about{
-				padding:10px 0 0;
+			
+			.bg-orange {
+				background-color: #ff5700!important
 			}
-			/*控制退出的样式*/
-			.exit .mui-table-view-cell{padding-right:0}
-			.exit .mui-table-view-cell>a:not(.mui-btn){margin-right:0}
+			
+			#sliderSegmentedControl .mui-active {
+				color: #ff5700
+			}
+			
+			.order-title {
+				color: #000;
+				margin-top: 6px
+			}
+			
+			.stateType {
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				border: 1px solid #a5a5a5;
+				padding: 2px 8px;
+				border-radius: 5px;
+				color: #a5a5a5;
+				line-height: 20px;
+				-webkit-transform: translate(0, -50%);
+				-ms-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+			}
+			
+			.mui-table-view-cell {
+				margin-bottom: 10px;
+				background-color: #fff
+			}
+			
+			.order-null {
+				text-align: center;
+				padding-top: 10%;
+			}
+			
+			.mui-control-content,
+			.mui-table-view {
+				background-color: transparent
+			}
+			
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: 45%
+			}
 		</style>
-	</head>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
+			<h1 class="mui-title">我的订单</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						全部
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						审核中
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						待上门
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						待支付
+					</a>
+					<a class="mui-control-item" href="#item5mobile">
+						待评价
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-25 bg-orange"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--订单为空时额样式布局-->
+								<div class="order-null">
+									<img src="../images/ice-null.png" />
+									<div class="f-essential">暂无进行中订单</div>
+								</div>
+								<!--有订单时的布局样式-->
+								<!--<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media bg-white">
+										<a href="order-details.html">
+											<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+											<div class="mui-media-body">
+												<p class="order-title">五金件安装</p>
+												<p class="mui-ellipsis">2017-06-05 17:50</p>
+											</div>
+											<span class="stateType">待<br />支<br />付</span>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media bg-white">
+										<a href="order-details.html">
+											<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+											<div class="mui-media-body">
+												<p class="order-title">五金件安装</p>
+												<p class="mui-ellipsis">2017-06-05 17:50</p>
+											</div>
+											<span class="stateType">审<br />核<br />中</span>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media bg-white">
+										<a href="order-details.html">
+											<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+											<div class="mui-media-body">
+												<p class="order-title">五金件安装</p>
+												<p class="mui-ellipsis">2017-06-05 17:50</p>
+											</div>
+											<span class="stateType">待<br />上<br />门</span>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media bg-white">
+										<a href="order-details.html">
+											<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+											<div class="mui-media-body">
+												<p class="order-title">五金件安装</p>
+												<p class="mui-ellipsis">2017-06-05 17:50</p>
+											</div>
+											<span class="stateType">待<br />评<br />价</span>
+										</a>
+									</li>
+								</ul>-->
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
 
-	<body>
-		<div id="">
-			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
-				<a href="index.html" class="mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
-				<h1 class="mui-title">我的订单</h1>
-				<a href="message.html" class="mui-pull-right">
-				</a>
-			</header>
-			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
-				<div class="content">
-					<img src="../images/logo.png"/>
-					<p class="about">快修 旨在精益求精</p>
-					<p>1.0.0</p>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll4" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll5" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
-		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 		<script>
-			mui.init();
 			mui.init({
-				swipeBack: true //启用右滑关闭功能
+				swipeBack: false
 			});
-			//实现ios平台原生侧滑关闭页面；
-			if(mui.os.plus && mui.os.ios) {
-				mui.plusReady(function() {
-					//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
-					plus.webview.currentWebview().setStyle({
-						'popGesture': 'none'
-					});
+			(function($) {
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
 				});
-			}
+				var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第二个选项卡子项-1</li><li class="mui-table-view-cell">第二个选项卡子项-2</li><li class="mui-table-view-cell">第二个选项卡子项-3</li><li class="mui-table-view-cell">第二个选项卡子项-4</li><li class="mui-table-view-cell">第二个选项卡子项-5</li></ul>';
+				var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+				var html4 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第四个选项卡子项-1</li><li class="mui-table-view-cell">第二个选项卡子项-2</li><li class="mui-table-view-cell">第二个选项卡子项-3</li><li class="mui-table-view-cell">第二个选项卡子项-4</li><li class="mui-table-view-cell">第二个选项卡子项-5</li></ul>';
+				var html5 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第五个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+				var item2 = document.getElementById('item2mobile');
+				var item3 = document.getElementById('item3mobile');
+				var item4 = document.getElementById('item4mobile');
+				var item5 = document.getElementById('item5mobile');
+				document.getElementById('slider').addEventListener('slide', function(e) {
+					if(e.detail.slideNumber === 1) {
+						if(item2.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item2.querySelector('.mui-scroll').innerHTML = html2;
+							}, 500);
+						}
+					} else if(e.detail.slideNumber === 2) {
+						if(item3.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item3.querySelector('.mui-scroll').innerHTML = html3;
+							}, 500);
+						}
+					} else if(e.detail.slideNumber === 3) {
+						if(item4.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item4.querySelector('.mui-scroll').innerHTML = html4;
+							}, 500);
+						}
+					} else if(e.detail.slideNumber === 4) {
+						if(item5.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item5.querySelector('.mui-scroll').innerHTML = html5;
+							}, 500);
+						}
+					}
+				});
+			})(mui);
 		</script>
+
 	</body>
 
 </html>

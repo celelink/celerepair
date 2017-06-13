@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>修改密码</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			span.mui-icon {
+				font-size: 20px;
+				color: #fff;
+			}
+			
+			.mui-off-canvas-left {
+				color: #fff;
+			}
+			
+			.title {
+				margin: 35px 15px 10px;
+			}
+			
+			.title+.content {
+				margin: 10px 15px 35px;
+				color: #bbb;
+				text-indent: 1em;
+				font-size: 14px;
+				line-height: 24px;
+			}
+			
+			.mui-repair {
+				width: 44%;
+				padding: 4% 0;
+				margin: 0 0 0 4%;
+				color: #fff;
+				border: 0;
+				background: #92b0dd;
+				border-radius: 10px;
+			}
+			
+			#offCanvasSideScroll {
+				padding-top: 44px
+			}
+			
+			.mui-repair-left {
+				margin-right: 4%;
+				background: #e0b6b6;
+			}
+			
+			.mui-repair-right {
+				margin-left: -6px
+			}
+			
+			.f-white {
+				color: #fff!important
+			}
+			
+			.f-blank {
+				color: #000!important
+			}
+			
+			.f-14 {
+				font-size: 14px!important;
+			}
+			
+			.bg-orange {
+				background-color: #ff5700!important;
+			}
+			
+			.mui-bar {
+				background-color: #ff5700
+			}
+			
+			.f-orange {
+				color: #ff5700!important
+			}
+			
+			input[type="text"],
+			input[type="password"] {
+				color: #000;
+				padding-left: 38px;
+				font-size: 14px
+			}
+			
+			.icon-left,
+			.mui-input-row .mui-input-password~.mui-icon-eye {
+				color: #000;
+			}
+			
+			#offCanvasSideScroll .icon-left {
+				left: 0
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				right: 10px;
+				left: 10px
+			}
+			
+			.btn-submit {
+				padding: 10px;
+				color: #fff
+			}
+			
+			.mui-input-row>button {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				transform: translate(0, -50%);
+				padding: 3px 6px;
+				border:none;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="">
+			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
+				<h1 class="mui-title">修改密码</h1>
+				<a href="message.html" class="mui-pull-right">
+				</a>
+			</header>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+						<button class="bg-orange f-white">发送验证码</button>
+						<input type="text" data-input-password="3" placeholder="手机号" style="padding-right:102px">
+					</div>
+					<div class="mui-input-row">
+						<span class="mui-icon mui-icon-locked icon-left f-blank"></span>
+						<input type="text" data-input-password="3" placeholder="验证码">
+					</div>
+					<div class="mui-input-row">
+						<span class="mui-icon mui-icon-locked icon-left f-blank"></span>
+						<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码"  style="padding-right:42px">
+						<span class="mui-icon mui-icon-eye" id="see"></span>
+					</div>
+					<div class="btn-submit">
+						<input type="submit" name="submit" id="submit" value="完成" class="mui-btn mui-btn-block bg-orange" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
+		<script>
+			mui.init();
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			document.getElementById('see').addEventListener('click', function() {
+				if(mui(".mui-input-password")[0].getAttribute("type") == "password") {
+					mui(".mui-input-password")[0].setAttribute("type", "text");
+					this.style.color = "#ccc";
+				} else {
+					mui(".mui-input-password")[0].setAttribute("type", "password");
+					this.style.color = "#000";
+				}
+			});
+		</script>
+	</body>
+
+</html>

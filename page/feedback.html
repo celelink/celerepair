@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hello MUI</title>
+		<title>问题反馈</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -249,10 +249,11 @@
 				transform: translate(-50%, -50%);
 				font-family: "微软雅黑";
 				content: '';
-				width:50%;
-				height:2px;
-				background:#ccc
+				width: 50%;
+				height: 2px;
+				background: #ccc
 			}
+			
 			.file-box:before {
 				position: absolute;
 				top: 50%;
@@ -260,11 +261,14 @@
 				transform: translate(-50%, -50%);
 				font-family: "微软雅黑";
 				content: '';
-				width:2px;
-				height:50%;
-				background:#ccc
+				width: 2px;
+				height: 50%;
+				background: #ccc
 			}
-			.file-box{margin-right:-2px}
+			
+			.file-box {
+				margin-right: -2px
+			}
 		</style>
 		<link rel="stylesheet" type="text/css" href="../css/css/feedback.css" />
 	</head>
@@ -356,13 +360,18 @@
 		});
 		//设置图片的平均分配宽度
 		mui(function($) {
-				var arr = document.querySelectorAll('.file-box');
-				var old = document.querySelector('#image-list').scrollWidth;
-				for(var i = 0; i < arr.length; i++) {
-					arr[i].style.padding = (old-35)/8+'px';
-				}
+			var arr = document.querySelectorAll('.file-box');
+			var old = document.querySelector('#image-list').scrollWidth;
+			for(var i = 0; i < arr.length; i++) {
+				arr[i].style.padding = (old - 35) / 8 + 'px';
+			}
 
 		});
+		//选择快捷输入
+		mui('.mui-popover').on('tap', 'li', function(e) {
+			document.getElementById("question").value = document.getElementById("question").value + this.children[0].innerHTML;
+			mui('.mui-popover').popover('toggle')
+		})
 	</script>
 
 </html>

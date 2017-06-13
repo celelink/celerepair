@@ -122,9 +122,11 @@
 			.bg-orange {
 				background-color: #ff5700!important
 			}
+			
 			.bg-white {
 				background-color: #fff!important
 			}
+			
 			.order-null {
 				text-align: center;
 				padding-top: 10%;
@@ -169,23 +171,33 @@
 				border: 1px solid #a5a5a5;
 				padding: 2px 8px;
 				border-radius: 5px;
-				color:#a5a5a5;
+				color: #a5a5a5;
 				line-height: 20px;
 				-webkit-transform: translate(0, -50%);
 				-ms-transform: translate(0, -50%);
 				transform: translate(0, -50%);
 			}
 			
-			.order-list .mui-table-view .mui-media-object {
-				line-height: 42px;
-				max-width: 80px;
-				height: 80px;
+			.order-list .mui-table-view-cell:after {
+				display: none;
 			}
-			.order-list .mui-table-view-cell:after{display: none;}
-			.order-list .mui-card{box-shadow: none;}
-			.order-list .order-title{color:#000;margin-top:6px}
-			.mui-table-view-cell{margin-bottom:10px}
-			.imgWidth{width:52px}
+			
+			.order-list .mui-card {
+				box-shadow: none;
+			}
+			
+			.order-list .order-title {
+				color: #000;
+				margin-top: 6px
+			}
+			
+			.mui-table-view-cell {
+				margin-bottom: 10px
+			}
+			
+			.imgWidth {
+				width: 52px
+			}
 		</style>
 	</head>
 
@@ -234,7 +246,7 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a href="javascript:;" class="mui-navigate-right" id="confirmBtn">
+								<a href="javascript:;" class="mui-navigate-right" onclick="confirmBtn(1)">
 									客服热线
 								</a>
 							</li>
@@ -247,7 +259,7 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
+								<a href="javascript:;" class="mui-navigate-right" onclick="confirmBtn(2)">
 									清除缓存
 								</a>
 							</li>
@@ -475,16 +487,28 @@
 				window.top.location.href = this.href;
 			});
 			//电话号码
-			document.getElementById("confirmBtn").addEventListener('tap', function() {
-				var btnArray = ['取消', '拨打'];
-				mui.confirm('400-888-888', '您确定拨打电话吗？', btnArray, function(e) {
-					if(e.index == 1) {
-						window.location.href = 'tel:400-888-888';
-					} else {
-						//info.innerText = 'MUI没有得到你的认可，继续加油'
-					}
-				})
-			});
+			function confirmBtn(event) {
+				if(event == 1) {
+					var btnArray = ['取消', '拨打'];
+					mui.confirm('400-888-888', '您确定拨打电话吗？', btnArray, function(e) {
+						if(e.index == 1) {
+							window.location.href = 'tel:400-888-888';
+						} else {
+							//info.innerText = 'MUI没有得到你的认可，继续加油'
+						}
+					})
+				} else if(event == 2) {
+					var btnArray = ['取消', '确定'];
+					mui.confirm('您确定清除缓存吗？', '温馨提示', btnArray, function(e) {
+						if(e.index == 1) {
+							//window.location.href = 'tel:400-888-888';
+						} else {
+							//info.innerText = 'MUI没有得到你的认可，继续加油'
+						}
+					})
+				}
+
+			}
 		</script>
 	</body>
 

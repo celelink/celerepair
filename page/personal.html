@@ -41,29 +41,10 @@
 				line-height: 24px;
 			}
 			
-			input {
-				color: #fff;
+			#offCanvasSideScroll {
+				padding-top: 44px
 			}
 			
-			.userPic {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				-webkit-transform: translate(-50%, -50%);
-				-ms-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
-			}
-			
-			.mui-repair {
-				width: 44%;
-				padding: 4% 0;
-				margin: 0 0 0 4%;
-				color: #fff;
-				border: 0;
-				background: #92b0dd;
-				border-radius: 10px;
-			}
-			#offCanvasSideScroll{padding-top:44px}
 			.mui-repair-left {
 				margin-right: 4%;
 				background: #e0b6b6;
@@ -88,24 +69,45 @@
 			.bg-orange {
 				background-color: #ff5700!important;
 			}
-			.userImg{
+			
+			.userImg {
 				position: absolute;
 				top: 0;
-				right:40px;
+				right: 40px;
 				height: 43px;
-				padding:3px 0;
+				padding: 3px 0;
 			}
-			.mui-position-right{
+			
+			.mui-position-right {
 				position: absolute;
 				right: 40px;
 			}
-			.mui-bar{background-color:#ff5700}
+			
+			.mui-bar {
+				background-color: #ff5700
+			}
+			
 			.f-orange {
 				color: #ff5700!important
 			}
 			/*控制退出的样式*/
-			.exit .mui-table-view-cell{padding-right:0}
-			.exit .mui-table-view-cell>a:not(.mui-btn){margin-right:0}
+			
+			.exit .mui-table-view-cell {
+				padding-right: 0
+			}
+			
+			.exit .mui-table-view-cell>a:not(.mui-btn) {
+				margin-right: 0
+			}
+			
+			[type="file"] {
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+			}
 		</style>
 	</head>
 
@@ -121,28 +123,28 @@
 				<div class="mui-scroll">
 					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
 						<li class="mui-table-view-cell">
-							<a class="mui-navigate-right">
+							<a href="#picture" class="mui-navigate-right">
 								头像
-							<img class="userImg" src="../images/60x60.gif"/>
+								<img class="userImg" src="../images/60x60.gif" />
 							</a>
 						</li>
 						<li class="mui-table-view-cell">
 							<a class="mui-navigate-right">
 								姓名
-							<span class="mui-position-right">乔布斯</span>
+								<span class="mui-position-right">乔布斯</span>
 							</a>
 						</li>
 					</ul>
 					<br />
 					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
 						<li class="mui-table-view-cell">
-							<a class="mui-navigate-right">
+							<a href="personal-mobile.html" class="mui-navigate-right">
 								联系电话
-							<span class="mui-position-right">13500616492</span>
+								<span class="mui-position-right">13500616492</span>
 							</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class="mui-navigate-right">
+							<a href="personal-password.html" class="mui-navigate-right">
 								修改密码
 							</a>
 						</li>
@@ -159,22 +161,35 @@
 					</ul>
 				</div>
 			</div>
+			<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<h4 class="mui-vertical">拍照或录像</h4>
+						<input type="file" name="picture" id="camera" onchange="file(this)" class="mui-opacity" capture="camera" accept="image/*" />
+					</li>
+					<li class="mui-table-view-cell">
+						<h4 class="mui-vertical">选取现有的</h4>
+						<input type="file" name="picture" id="picture" onchange="file(this)" class="mui-opacity" accept="image/*" />
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#picture" class=""><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 		<script>
-			mui.init();
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
-			//实现ios平台原生侧滑关闭页面；
-			if(mui.os.plus && mui.os.ios) {
-				mui.plusReady(function() {
-					//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
-					plus.webview.currentWebview().setStyle({
-						'popGesture': 'none'
-					});
-				});
+			//修改头像事件
+			function file(e) {
+				//在此处可以拿到图片信息
+				document.querySelector('#picture').style.display='none';
+				document.querySelector('.mui-backdrop-action').style.display='none';
 			}
 		</script>
 	</body>
