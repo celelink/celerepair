@@ -10,6 +10,8 @@
 
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/css/mui.picker.css" />
+		<link rel="stylesheet" type="text/css" href="../css/css/mui.poppicker.css" />
 		<style>
 			html,
 			body {
@@ -51,6 +53,12 @@
 			.f-14 {
 				font-size: 14px!important;
 			}
+			.f-orange {
+				color: #ff5700!important
+			}
+			.f-cc{
+				color:#ccc
+			}
 			
 			.bg-orange {
 				background-color: #ff5700!important;
@@ -65,9 +73,6 @@
 				background-color: #ff5700
 			}
 			
-			.f-orange {
-				color: #ff5700!important
-			}
 			
 			.mui-input-group .mui-input-row:after {
 				left: 0
@@ -91,7 +96,12 @@
 			input[type=reset],
 			input[type=submit] {
 				padding: 6px 42%;
-				border:none
+				border: none
+			}
+			
+			.text-overflow {
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 		</style>
 	</head>
@@ -106,7 +116,7 @@
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label>联系地址:</label>
-						<input type="text" placeholder="请输入详细地址" class="mui-text-right">
+						<input type="text" placeholder="请输入详细地址" class="mui-text-right text-overflow f-14 f-cc" id="showCityPicker3">
 					</div>
 					<br />
 					<div class="mui-input-row top-border">
@@ -125,6 +135,9 @@
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/js/mui.picker.js"></script>
+		<script type="text/javascript" src="../js/js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../js/js/city.data-3.js"></script>
 		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 		<script>
 			mui.init();
@@ -140,6 +153,26 @@
 					});
 				});
 			}
+
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//					//级联示例
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							mui.toast("你选择的城市是:" + (items[0] || {}).value + " " + (items[1] || {}).value + " " + (items[2] || {}).value);
+							showCityPickerButton.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
 		</script>
 	</body>
 
