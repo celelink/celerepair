@@ -206,19 +206,19 @@
 										</a>
 									</li>
 									<li class="mui-table-view-cell">
-										<div id="wrapper">
+										<div id="wrapper-0">
 											<p class="order-title">你可以上传多张报修图片:</p>
-											<div id="container">
+											<div id="container-0">
 												<!--头部，相册选择和格式选择-->
-												<div id="uploader">
+												<div id="uploader-0">
 													<div class="queueList">
-														<div id="dndArea" class="placeholder">
-															<div id="filePicker"></div>
+														<div id="dndArea-0" class="placeholder">
+															<div id="filePicker-0"></div>
 														</div>
 													</div>
 													<div class="statusBar" style="display:none;">
 														<div class="btns">
-															<div id="filePicker2"></div>
+															<div id="filePicker2-0"></div>
 															<div class="uploadBtn">开始上传</div>
 														</div>
 													</div>
@@ -231,7 +231,7 @@
 										<textarea name="" rows="5" cols="5"></textarea>
 									</li>
 								</ul>
-							<!--</div>
+							</div>
 							<br />
 							<div class="mui-bar-nav">
 								<ul class="mui-table-view">
@@ -241,18 +241,18 @@
 										</a>
 									</li>
 								</ul>
-							</div>-->
+							</div>
+							<br />
+							<div>
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<a href="javascript:;" id="submit" class="mui-text-center">
+											确认下单
+										</a>
+									</li>
+								</ul>
+							</div>
 						</form>
-					</div>
-					<br />
-					<div>
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a href="javascript:;" id="submit" class="mui-text-center">
-									确认下单
-								</a>
-							</li>
-						</ul>
 					</div>
 				</div>
 			</div>
@@ -282,7 +282,7 @@
 		<script type="text/javascript" src="../upload/jquery.js"></script>
 		<script type="text/javascript" src="../upload/webuploader.js"></script>
 		<script type="text/javascript" src="../upload/html2canvas.js"></script>
-		<script type="text/javascript" src="../upload/upload.js"></script>
+		<script type="text/javascript" src="./upload.js"></script>
 		<script>
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
@@ -332,17 +332,7 @@
 				}
 
 			});
-			
-			document.getElementById("submit").addEventListener('tap', function() {
-				var btnArray = ['否', '是'];
-				mui.confirm('你确定继续添加订单？', '温馨提示', btnArray, function(e) {
-					if (e.index == 1) {
-						info.innerText = '你刚确认MUI是个好框架';
-					} else {
-						info.innerText = 'MUI没有得到你的认可，继续加油'
-					}
-				})
-			});
+
 		</script>
 	</body>
 
