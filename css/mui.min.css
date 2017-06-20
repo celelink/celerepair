@@ -833,7 +833,7 @@ p {
 
 .mui-loading .mui-spinner {
 	display: block;
-	margin: 0 auto
+	margin: 20px auto 0
 }
 
 .mui-spinner {
@@ -2961,7 +2961,7 @@ select:focus {
 }
 
 .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
-	background-color: #007aff
+	background-color: #ff5700
 }
 
 .mui-segmented-control-positive {
