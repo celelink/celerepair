@@ -1875,7 +1875,7 @@ input[type=submit]:enabled:active {
 
 .mui-table-view-inverted .mui-table-view-cell.mui-active,
 .mui-table-view-inverted .mui-table-view-cell>a:not(.mui-btn).mui-active {
-	background-color: #242424
+	background-color: #ccc
 }
 
 .mui-table-view-cell {
@@ -2511,7 +2511,6 @@ select:focus {
 .mui-input-group textarea {
 	margin-bottom: 0;
 	border: 0;
-	border-radius: 0;
 	background-color: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none

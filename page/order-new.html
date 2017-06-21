@@ -168,6 +168,12 @@
 			.mui-table-view {
 				margin-bottom: 10px
 			}
+			.mui-icon-extra{
+				font-size: 16px;
+			}
+			[class^="mui-"]:before{
+				color: #ff5700;
+			}
 		</style>
 	</head>
 
@@ -187,8 +193,8 @@
 							<div class="mui-bar-nav">
 								<ul class="mui-table-view">
 									<li class="mui-table-view-cell">
-										<a href="#" class="mui-navigate-right mui-icon mui-icon-location" id='showUserPicker'>
-											报修地址<span id="userResult"></span>
+										<a href="#" class="mui-navigate-right mui-icon mui-icon-map" id='showUserPicker'>
+											报修地址
 										</a>
 									</li>
 								</ul>
@@ -196,12 +202,12 @@
 							<div class="mui-bar-nav" id="orderList">
 								<ul class="mui-table-view list-0">
 									<li class="mui-table-view-cell">
-										<a href="javascript:;" class="mui-navigate-right mui-icon mui-icon-location showCityPicker">
+										<a href="javascript:;" class="mui-navigate-right mui-icon mui-icon-bars showCityPicker">
 											报修类型
 										</a>
 									</li>
 									<li class="mui-table-view-cell demo3">
-										<a href="javascript:;" id="demo3" data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="mui-navigate-right mui-icon mui-icon-location">
+										<a href="javascript:;" id="demo3" data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="mui-navigate-right mui-icon-extra mui-icon-extra-outline">
 											上门时间
 										</a>
 									</li>
@@ -352,7 +358,7 @@
 					userPicker.setData([{value:'2304',text:'杭州武林银泰男装'},{value:'2560',text:'好孩子长沙海信购物中心kids'},{value:'2816',text:'南京东方福来德商城'},{value:'3072',text:'玉玲电器'},{value:'3328',text:'兰州-nike 国芳百货店'},{value:'3584',text:'济南高新万达广场YA'},{value:'3840',text:'南京水游城'},{value:'4096',text:'沈阳市沈河区运动汇YA'},{value:'4352',text:'TC浙江宁波慈溪银泰'},{value:'4608',text:'嘉兴旭辉广场店'},{value:'4864',text:'191642-好孩子成都双流区双楠大道城南优品道YA'},{value:'5120',text:'阿迪达斯-太古店'},{value:'5376',text:'龙汇超市'},{value:'5632',text:'威海威高'},{value:'7916',text:'衡阳耐克1'}]);
 					
 					var showUserPickerButton = doc.getElementById('showUserPicker');
-					var userResult = doc.getElementById('userResult');
+					var userResult = doc.getElementById('showUserPicker');
 					showUserPickerButton.addEventListener('tap', function(event) {
 						userPicker.show(function(items) {
 							console.log(items[0]);
