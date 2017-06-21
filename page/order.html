@@ -293,7 +293,7 @@
 				//打开此页面时第一屏的页面内容
 				if(item1.querySelector('.mui-loading')) {
 					setTimeout(function() {
-						item1.querySelector('.mui-scroll').innerHTML = html1;
+						item1.querySelector('.mui-table-view').innerHTML = html1;
 					}, 500);
 				}
 				//点击导航栏时的事件
@@ -302,28 +302,28 @@
 					if(e.detail.slideNumber === 1) {
 						if(item2.querySelector('.mui-loading')) {
 							setTimeout(function() {
-								item2.querySelector('.mui-scroll').innerHTML = html2;
+								item2.querySelector('.mui-table-view').innerHTML = html2;
 							}, 500);
 						}
 					//第三屏的页面内容
 					} else if(e.detail.slideNumber === 2) {
 						if(item3.querySelector('.mui-loading')) {
 							setTimeout(function() {
-								item3.querySelector('.mui-scroll').innerHTML = html3;
+								item3.querySelector('.mui-table-view').innerHTML = html3;
 							}, 500);
 						}
 					//第四屏的页面内容
 					} else if(e.detail.slideNumber === 3) {
 						if(item4.querySelector('.mui-loading')) {
 							setTimeout(function() {
-								item4.querySelector('.mui-scroll').innerHTML = html4;
+								item4.querySelector('.mui-table-view').innerHTML = html4;
 							}, 500);
 						}
 					//第五屏的页面内容
 					} else if(e.detail.slideNumber === 4) {
 						if(item5.querySelector('.mui-loading')) {
 							setTimeout(function() {
-								item5.querySelector('.mui-scroll').innerHTML = html5;
+								item5.querySelector('.mui-table-view').innerHTML = html5;
 							}, 500);
 						}
 					}
