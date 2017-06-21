@@ -188,7 +188,7 @@
 								<ul class="mui-table-view">
 									<li class="mui-table-view-cell">
 										<a href="#" class="mui-navigate-right mui-icon mui-icon-location" id='showUserPicker'>
-											报修地址
+											报修地址<span id="userResult"></span>
 										</a>
 									</li>
 								</ul>
@@ -349,42 +349,14 @@
 				$.ready(function() {
 					//普通示例
 					var userPicker = new $.PopPicker();
-					userPicker.setData([{
-						value: 'ywj',
-						text: '董事长 叶文洁'
-					}, {
-						value: 'aaa',
-						text: '总经理 艾AA'
-					}, {
-						value: 'lj',
-						text: '罗辑'
-					}, {
-						value: 'ymt',
-						text: '云天明'
-					}, {
-						value: 'shq',
-						text: '史强'
-					}, {
-						value: 'zhbh',
-						text: '章北海'
-					}, {
-						value: 'zhy',
-						text: '庄颜'
-					}, {
-						value: 'gyf',
-						text: '关一帆'
-					}, {
-						value: 'zhz',
-						text: '智子'
-					}, {
-						value: 'gezh', 
-						text: '歌者'
-					}]);
+					userPicker.setData([{value:'2304',text:'杭州武林银泰男装'},{value:'2560',text:'好孩子长沙海信购物中心kids'},{value:'2816',text:'南京东方福来德商城'},{value:'3072',text:'玉玲电器'},{value:'3328',text:'兰州-nike 国芳百货店'},{value:'3584',text:'济南高新万达广场YA'},{value:'3840',text:'南京水游城'},{value:'4096',text:'沈阳市沈河区运动汇YA'},{value:'4352',text:'TC浙江宁波慈溪银泰'},{value:'4608',text:'嘉兴旭辉广场店'},{value:'4864',text:'191642-好孩子成都双流区双楠大道城南优品道YA'},{value:'5120',text:'阿迪达斯-太古店'},{value:'5376',text:'龙汇超市'},{value:'5632',text:'威海威高'},{value:'7916',text:'衡阳耐克1'}]);
+					
 					var showUserPickerButton = doc.getElementById('showUserPicker');
 					var userResult = doc.getElementById('userResult');
 					showUserPickerButton.addEventListener('tap', function(event) {
 						userPicker.show(function(items) {
-							userResult.innerText = JSON.stringify(items[0]);
+							console.log(items[0]);
+							userResult.innerText = items[0].text;
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
