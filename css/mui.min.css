@@ -1064,7 +1064,7 @@ input[type=submit]:enabled:active {
 .mui-btn-red {
 	color: #fff;
 	border: 1px solid #dd524d;
-	background-color: #dd524d
+	background-color: #fe392f
 }
 
 .mui-btn-danger.mui-active:enabled,
