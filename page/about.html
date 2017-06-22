@@ -15,13 +15,18 @@
 			body {
 				background-color: #efeff4;
 			}
-			.mui-position-right{
+			
+			.mui-position-right {
 				position: absolute;
 				right: 40px;
 			}
-			.content{padding-top:30%}
-			.content .about{
-				padding:10px 0 0;
+			
+			.content {
+				padding-top: 30%
+			}
+			
+			.content .about {
+				padding: 10px 0 0;
 			}
 		</style>
 	</head>
@@ -36,7 +41,7 @@
 			</header>
 			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
 				<div class="content">
-					<img src="../images/logo.png"/>
+					<img src="../images/logo.png" />
 					<p class="about">快修 旨在精益求精</p>
 					<p>1.0.0</p>
 				</div>
@@ -58,6 +63,16 @@
 					});
 				});
 			}
+			(function($, doc) {
+				$.ready(function() {
+					var top = $('header');
+					for(var i = 0; i < top.length; i++) {
+						top[i].style.paddingTop = (128 / 1334 * window.screen.height - 44).toFixed(2) + 'px';
+						top[i].style.height = (128 / 1334 * window.screen.height).toFixed(2) + 'px';
+						document.getElementById('offCanvasSideScroll').style.paddingTop = (128 / 1334 * window.screen.height - 44).toFixed(2) + 'px';
+					}
+				})
+			})(mui, document);
 		</script>
 	</body>
 

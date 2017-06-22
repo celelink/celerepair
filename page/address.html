@@ -195,6 +195,16 @@
 				});
 				//初始化单页的区域滚动
 				mui('.mui-scroll-wrapper').scroll();
+				
+				(function($, doc) {
+				$.ready(function() {
+					var top = $('header');
+					for(var i = 0; i < top.length; i++) {
+						top[i].style.paddingTop = (128 / 1334 * window.screen.height - 44).toFixed(2) + 'px';
+						top[i].style.height=document.getElementById('offCanvasSideScroll').style.paddingTop = (128 / 1334 * window.screen.height).toFixed(2) + 'px';
+					}
+				})
+			})(mui, document);
 			</script>
 	</body>
 
