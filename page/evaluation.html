@@ -124,6 +124,7 @@
 				left: 0;
 				width: 100%;
 				z-index: 1;
+				min-height: 100%;
 			}
 			
 			.file-box:before {
@@ -211,7 +212,7 @@
 							<div class="as">
 								<span class="lines"></span>
 								<div class="file-box" style="margin-right: -2px;">
-									<input type="file" name="file" class="file" accept="image/*" onchange="file(this)">
+									<input type="file" class="file" accept="image/*" onchange="file(this)">
 								</div>
 							</div>
 						</div>
@@ -276,7 +277,7 @@
 						img.setAttribute('src', e.target.result);
 						_this.appendChild(img);
 						div.setAttribute('class', 'file-box');
-						div.innerHTML = '<input type="file" name="file" class="file" accept="image/*" onchange="file(this)">'
+						div.innerHTML = '<input type="file" class="file" accept="image/*" onchange="file(this)">'
 						_this.parentNode.appendChild(div);
 						src();
 					};

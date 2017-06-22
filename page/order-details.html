@@ -9,7 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
 		<style>
 			html,
 			body {
@@ -417,19 +417,21 @@
 				}
 			});
 			//状态的封装
-			cycle(4);
+			cycle(3);
 
 			function cycle(a) {
 				var arr = document.querySelectorAll('.content .order-line img');
 				var arr2 = document.querySelectorAll('.content .order-line');
 				var arr3 = document.querySelectorAll('.bottom_tel');
 				for(var i = 0; i <= a; i++) {
-					document.querySelector('#line-active').style.width = 20 * i + 10 + "%"
+					document.querySelector('#line-active').style.width = 20 * i + 10 + "%";
 					arr[i].setAttribute('src', arr[i].getAttribute('src').replace(/not/, "already"));
+					arr[i].parentNode.querySelector('p').innerHTML=	arr[i].parentNode.querySelector('p').innerHTML.replace(/待/, "已");
 					arr3[i].style.display='block';
 				}
 				arr2[i - 1].classList.add('active');
 			}
+			
 		</script>
 	</body>
 

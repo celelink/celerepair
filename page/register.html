@@ -43,7 +43,7 @@
 			
 			#register .mui-input-row input {
 				color: #fff;
-				padding:15px 10px 15px 38px
+				padding: 15px 10px 15px 38px
 			}
 			
 			.userPic {
@@ -105,7 +105,12 @@
 				text-align: center;
 				background: rgba(120, 120, 120, 0.75);
 			}
-			#register .mui-btn-block{padding:6px 12px;border: none;}
+			
+			#register .mui-btn-block {
+				padding: 6px 12px;
+				border: none;
+			}
+			
 			.mui-filter {
 				-webkit-filter: blur(6px);
 				-moz-filter: blur(6px);
@@ -170,11 +175,92 @@
 			.mui-content {
 				padding-top: 44px;
 			}
+			
 			#register header a {
 				color: #fff
 			}
-			.mui-box-shadow-none{box-shadow: none;}
-			.mui-input-group .mui-input-row:after{background:transparent}
+			
+			.mui-box-shadow-none {
+				box-shadow: none;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				background: transparent
+			}
+			
+			.file-box {
+				margin-right: 2px;
+			}
+			
+			.file {
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.file-box {
+				display: inline-block;
+				width: 24%;
+				position: relative;
+				overflow: hidden;
+				padding: 40px;
+				border: 1px dotted #ccc;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+			}
+			
+			.file-box img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 1;
+				min-height: 100%;
+			}
+			
+			.file-box:before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: "微软雅黑";
+				content: '';
+				width: 2px;
+				height: 50%;
+				background: #ccc;
+			}
+			
+			.file-box:after {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: "微软雅黑";
+				content: '';
+				width: 50%;
+				height: 2px;
+				background: #ccc;
+			}
+			.business-body{
+				border: 1px solid #a7a7a7;
+    			border-radius: 6px;
+    			padding:8px 9px;
+			}
+			.business {
+				margin-top: 8px;
+			}
+			.mui-left{
+				float: left;
+			}
 		</style>
 	</head>
 
@@ -184,43 +270,61 @@
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title">注册快修</h1>
 			</header>
-			<div class="mui-content">
-				<div style="padding: 10px 10px;">
-					<div id="segmentedControl" class="mui-segmented-control">
-						<a class="mui-control-item mui-active" href="#item2">个人用户</a>
-						<a class="mui-control-item" href="#item3">合作用户</a>
-					</div>
-				</div>
-				<br />
-				<div>
-					<div id="item2" class="mui-control-content mui-active">
-						<form class="mui-input-group">
-							<div class="mui-input-row">
-								<span class="mui-icon mui-icon-person-filled icon-left"></span>
-								<input type="text" data-input-password="3" placeholder="姓名">
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-content">
+						<div style="padding: 10px 10px;">
+							<div id="segmentedControl" class="mui-segmented-control">
+								<a class="mui-control-item mui-active" href="#item2">普通店铺</a>
+								<a class="mui-control-item" href="#item3">合作店铺</a>
 							</div>
-							<div class="mui-input-row">
-								<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
-								<input type="text" data-input-password="3" placeholder="手机号">
+						</div>
+						<br />
+						<div>
+							<div id="item2" class="mui-control-content mui-active">
+								<form class="mui-input-group">
+									<div class="mui-input-row">
+										<span class="mui-icon mui-icon-person-filled icon-left"></span>
+										<input type="text" data-input-password="3" placeholder="姓名">
+									</div>
+									<div class="mui-input-row">
+										<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+										<input type="text" data-input-password="3" placeholder="手机号">
+									</div>
+									<div class="mui-input-row">
+										<span class="mui-icon-extra mui-icon-extra-calc icon-left"></span>
+										<button class="bg-orange f-white" id="send">发送验证码</button>
+										<input type="text" data-input-password="3" placeholder="验证码">
+									</div>
+									<div class="mui-input-row">
+										<span class="mui-icon mui-icon-locked icon-left"></span>
+										<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码">
+										<span class="mui-icon mui-icon-eye" onclick="see(this)"></span>
+									</div>
+									<div class="mui-input-row">
+										<span class="mui-icon mui-icon-locked icon-left"></span>
+										<input type="password" class="mui-input-password" data-input-password="3" placeholder="确认密码">
+										<span class="mui-icon mui-icon-eye" onclick="see(this)"></span>
+									</div>
+									<div class="mui-text-left business-body">
+										<label for="file" class="f-white">上传营业执照:</label>
+										<div class="business">
+											<div class="file-box" style="margin-right: -2px;">
+												<input type="file" class="file" accept="image/*" onchange="file(this)" />
+											</div>
+										</div>
+									</div>
+									<br />
+									<input type="submit" name="submit" id="submit" value="注册" class="mui-btn mui-btn-block bg-orange f-white" />
+								</form>
 							</div>
-							<div class="mui-input-row">
-								<span class="mui-icon-extra mui-icon-extra-calc icon-left"></span>
-								<input type="text" data-input-password="3" placeholder="验证码">
+							<div id="item3" class="mui-control-content">
+								<form class="mui-input-group">
+									<p class="contact f-white">合作用户请联系客服注册账号</p>
+									<a href="tel:4008001234" class="mui-btn mui-btn-block bg-orange f-white f-14">客服电话：400-200-3000</a>
+								</form>
 							</div>
-							<div class="mui-input-row">
-								<span class="mui-icon mui-icon-locked icon-left"></span>
-								<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码">
-								<span class="mui-icon mui-icon-eye" id="see"></span>
-							</div>
-							<br />
-							<input type="botton" name="submit" id="submit" value="注册" class="mui-btn mui-btn-block bg-orange f-white" />
-						</form>
-					</div>
-					<div id="item3" class="mui-control-content">
-						<form class="mui-input-group">
-							<p class="contact f-white">合作用户请联系客服注册账号</p>
-							<a href="tel:4008001234" class="mui-btn mui-btn-block bg-orange f-white f-14">客服电话：400-200-3000</a>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -240,15 +344,59 @@
 					});
 				});
 			}
-			document.getElementById('see').addEventListener('click',function(){
-				if(mui(".mui-input-password")[0].getAttribute("type")=="password"){
-					mui(".mui-input-password")[0].setAttribute("type","text");
-					this.style.color="#ccc";
-				}else{
-					mui(".mui-input-password")[0].setAttribute("type","password");
-					this.style.color="#fff";
+
+			//主界面和侧滑菜单界面均支持区域滚动；
+			mui('#offCanvasSideScroll').scroll();
+
+			function see(e) {
+				var pass = e.previousElementSibling;
+				if(pass.getAttribute('type') == "password") {
+					pass.setAttribute("type", "text");
+					e.style.color = '#ccc';
+				} else {
+					pass.setAttribute("type", "password");
+					e.style.color = '#fff';
 				}
-			});
+			};
+			//发送验证码
+			document.getElementById('send').addEventListener('click', function(event) {
+				var event = event || window.event;
+				event.preventDefault();
+				window.event.returnValue = false;
+				console.log('455');
+			})
+
+			//设置图片的平均分配宽度
+			src();
+
+			function src() {
+				var arr = document.querySelectorAll('.file-box');
+				var old = document.querySelector('.mui-input-row').scrollWidth;
+				for(var i = 0; i < arr.length; i++) {
+					arr[i].style.padding = (old - 35) / 8 + 'px';
+				}
+			}
+			//图片上传事件
+			function file(event) {
+				console.log(event);
+				var _this = event.parentNode;
+				if(window.FileReader) {
+					var reader = new FileReader();
+					reader.readAsDataURL(event.files[0]);
+					//监听文件读取结束后事件    
+					reader.onloadend = function(e) {
+						//console.log(e.target.result); //e.target.result就是最后的路径地址
+						var img = document.createElement('img');
+						var div = document.createElement('div');
+						img.setAttribute('src', e.target.result);
+						_this.appendChild(img);
+						div.setAttribute('class', 'file-box');
+						div.innerHTML = '<input type="file" class="file" accept="image/*" onchange="file(this)">'
+						_this.parentNode.appendChild(div);
+						src();
+					};
+				}
+			}
 		</script>
 	</body>
 

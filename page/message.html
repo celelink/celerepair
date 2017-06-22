@@ -15,73 +15,9 @@
 			body {
 				background-color: #efeff4;
 			}
-			/*p {
-				text-indent: 22px;
-			}*/
-			
-			span.mui-icon {
-				font-size: 20px;
-				color: #fff;
-			}
-			
-			.mui-off-canvas-left {
-				color: #fff;
-			}
-			
-			.title {
-				margin: 35px 15px 10px;
-			}
-			
-			.title+.content {
-				margin: 10px 15px 35px;
-				color: #bbb;
-				text-indent: 1em;
-				font-size: 14px;
-				line-height: 24px;
-			}
-			
-			input {
-				color: #fff;
-			}
 			
 			h4 {
 				font-weight: 400
-			}
-			
-			.f-blank {
-				color: #000!important
-			}
-			
-			.userPic {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				-webkit-transform: translate(-50%, -50%);
-				-ms-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
-			}
-			
-			.mui-repair {
-				width: 44%;
-				padding: 4% 0;
-				margin: 0 0 0 4%;
-				color: #fff;
-				border: 0;
-				background: #92b0dd;
-				border-radius: 10px;
-			}
-			
-			.mui-repair-left {
-				margin-right: 4%;
-				background: #e0b6b6;
-			}
-			
-			.mui-repair-right {
-				margin-left: -6px
-			}
-			
-			.textA {
-				vertical-align: middle
 			}
 			
 			.f-white {
@@ -118,93 +54,79 @@
 			.dataTime {
 				margin-top: 10px
 			}
-			.mui-bar{background-color:#ff5700}
+			
+			.mui-table-view-cell {
+				margin: 11px 10px;
+				padding: 0;
+			}
+			.mui-table-view,.mui-table-view:after,.mui-table-view:before{
+				background-color: transparent;
+			}
+			.mui-btn{
+				margin-bottom: 0;
+			}
+			.text-body{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		</style>
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
+		<header class="mui-bar mui-bar-nav bg-orange">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
 			<h1 class="mui-title">消息中心</h1>
 		</header>
 		<div id="messageLists" class="mui-content">
-			<div id="messageList">
-				<p class="mui-text-center dataTime">2017-06-06 10:00 (周三)</p>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<span class="mui-dot"></span>
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
+			<ul id="OA_task_1" class="mui-table-view">
+				<li>
+					<p class="mui-text-center dataTime">2017-06-06 10:00 (周三)</p>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<span class="mui-dot"></span>
+								<h4>官方消息</h4>
+								<p class="text-body">您的订单已审核通过！冰冻卡舍不得把是的吧上半年的空白</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<span class="mui-dot"></span>
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<span class="mui-dot"></span>
+								<h4>官方消息</h4>
+								<p class="text-body">您的订单已审核通过！冰冻卡舍不得把是的吧上半年的空白</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<h4>官方消息</h4>
+								<p class="text-body">您的订单已审核通过！冰冻卡舍不得把是的吧上半年的空白</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="messageList">
-				<p class="mui-text-center dataTime">2017-06-05 10:00 (周二)</p>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<span class="mui-dot"></span>
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
-						</div>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<span class="mui-dot"></span>
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
-						</div>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
-						</div>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner">
-							<h4>官方消息</h4>
-							<span>您的订单已审核通过！</span>
-						</div>
-					</div>
-				</div>
-			</div>
+				</li>
+			</ul>
 		</div>
 		<script src="../js/mui.min.js"></script>
-		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 		<script>
 			mui.init();
 			mui.init({
@@ -219,6 +141,38 @@
 					});
 				});
 			}
+			(function($) {
+				var btnArray = ['取消','确认'];
+				//拖拽后显示操作图标，点击操作图标删除元素；
+				$('#OA_task_1').on('tap', '.mui-btn', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该条记录？', '温馨提示', btnArray, function(e) {
+						if(e.index == 1) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				})
+				//点击查看消息内容
+				$('#OA_task_1').on('tap', '.mui-table-view-cell', function(event) {
+					var h1='官方消息';
+					var p='您的订单已审核通过！冰冻卡舍不得把是的吧上半年的空白您的订单已审核通过！冰冻卡舍不得把是的吧上半年的空白';
+					mui.confirm(p, h1, btnArray, function(e) {
+						if(e.index == 1) {
+							alert('您点击了确定')
+						} else {
+							setTimeout(function() {
+								alert('您点击了取消')
+							}, 0);
+						}
+					});
+				})
+				
+			})(mui);
 		</script>
 	</body>
 

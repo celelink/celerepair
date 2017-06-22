@@ -134,11 +134,11 @@
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
-						<button class="bg-orange f-white">发送验证码</button>
 						<input type="text" data-input-password="3" placeholder="手机号" style="padding-right:102px">
 					</div>
 					<div class="mui-input-row">
 						<span class="mui-icon mui-icon-locked icon-left f-blank"></span>
+						<button class="bg-orange f-white" id="send">发送验证码</button>
 						<input type="text" data-input-password="3" placeholder="验证码">
 					</div>
 					<div class="mui-input-row">
@@ -168,6 +168,13 @@
 					this.style.color = "#000";
 				}
 			});
+			//发送验证码
+			document.getElementById('send').addEventListener('click',function(event){
+				var event = event || window.event;
+				event.preventDefault();
+				window.event.returnValue = false;
+				alert('455');
+			})
 		</script>
 	</body>
 

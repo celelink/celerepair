@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>用户协议</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			#offCanvasSideScroll {
+				padding-top: 44px
+			}
+			.f-14{
+				font-size: 14px;
+			}
+			.f-white {
+				color: #fff!important
+			}
+			.f-orange{
+				color:#ff5700;
+			}
+			.bg-orange{
+				background-color: #ff5700!important;
+			}
+			#content {
+				padding: 44px 15px;
+			}
+			
+			.treaty-bottom {
+				position: fixed;
+				bottom: 0;
+				width:100%;
+			}
+			.treaty-bottom>a{
+				width: 50%;
+				display: inline-block;
+				float: left;
+				padding:3% 0;
+				text-align: center;
+				background-color: #e4e4e4;
+				font-weight: 500;
+				color:#b1b1b1;
+			}
+			#treaty-text{
+				background-color: #fff;
+				padding:5px 0;
+				width:100%;
+				display: inline-block;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="">
+			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
+				<a href="index.html" class="mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
+				<h1 class="mui-title">用户协议</h1>
+				<a href="message.html" class="mui-pull-right">
+				</a>
+			</header>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper mui-text-center">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div id="content">
+							<p>adbnsakjdcbhxzbhczxdbcsaj,zbcxzmhbcmzbdxzkj</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="treaty-bottom">
+				<span id="treaty-text" class="f-orange f-14">我已仔细阅读，并同意该合约内容</span>
+				<a href="login.html">拒绝</a>
+				<a href="register.html" class="bg-orange f-white">同意</a>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init();
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			//主界面和侧滑菜单界面均支持区域滚动；
+			mui('#offCanvasSideScroll').scroll();
+			//实现ios平台原生侧滑关闭页面；
+			if(mui.os.plus && mui.os.ios) {
+				mui.plusReady(function() {
+					//5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
+					plus.webview.currentWebview().setStyle({
+						'popGesture': 'none'
+					});
+				});
+			}
+		</script>
+	</body>
+
+</html>

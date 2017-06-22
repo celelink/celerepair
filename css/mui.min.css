@@ -2483,6 +2483,7 @@ select:focus {
 	background-color: #fff
 }
 
+
 /*.mui-input-group:after {
 	position: absolute;
 	right: 0;
@@ -2615,7 +2616,8 @@ select:focus {
 	padding: 8px 0
 }
 
-.mui-input-row .mui-input-clear~.mui-icon-clear,.icon-left,
+.mui-input-row .mui-input-clear~.mui-icon-clear,
+.icon-left,
 .mui-input-row .mui-input-password~.mui-icon-eye,
 .mui-input-row .mui-input-speech~.mui-icon-speech {
 	font-size: 20px;
@@ -4676,28 +4678,57 @@ body>.mui-progressbar {
 	height: 100%;
 	border: 0
 }
-::-webkit-input-placeholder { /* WebKit browsers */ 
-color: #ccc; 
-} 
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
-color: #ccc; 
-} 
-::-moz-placeholder { /* Mozilla Firefox 19+ */ 
-color: #ccc; 
-} 
-:-ms-input-placeholder { /* Internet Explorer 10+ */ 
-color: #ccc; 
-} 
 
-#login ::-webkit-input-placeholder,#register ::-webkit-input-placeholder { /* WebKit browsers */ 
-color: #fff; 
-} 
-#login :-moz-placeholder,#register :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
-color: #fff; 
-} 
-#login ::-moz-placeholder,#register ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
-color: #fff; 
-} 
-#login :-ms-input-placeholder,#register :-ms-input-placeholder { /* Internet Explorer 10+ */ 
-color: #fff; 
-} 
+::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #ccc;
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #ccc;
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #ccc;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #ccc;
+}
+
+#login ::-webkit-input-placeholder,
+#register ::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #fff;
+}
+
+#login :-moz-placeholder,
+#register :-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #fff;
+}
+
+#login ::-moz-placeholder,
+#register ::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #fff;
+}
+
+#login :-ms-input-placeholder,
+#register :-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #fff;
+}
+
+#send {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translate(0, -50%);
+	padding: 3px 6px;
+	border: none;
+	font-size: 14px;
+}
