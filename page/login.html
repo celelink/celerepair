@@ -9,7 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_n5o6ioc4rv8to6r.css"/>
 		<style>
 			html,
 			body {
@@ -91,13 +91,13 @@
 				<div><img src="../images/celerepair-logo.png" style="width: 60%;" /></div>
 				<form class="mui-input-group">
 					<div class="mui-input-row">
-						<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+						<span class="iconfont icon-shoujihao icon-left"></span>
 						<input type="text" id="customerName" data-input-password="3" placeholder="手机号/账号">
 					</div>
 					<div class="mui-input-row">
-						<span class="mui-icon mui-icon-locked icon-left"></span>
+						<span class="iconfont icon-denglumima icon-left"></span>
 						<input type="password" id="password" class="mui-input-password" data-input-password="3" placeholder="密码">
-						<span class="mui-icon mui-icon-eye" id="see"></span>
+						<span class="iconfont icon-off-yanjing" id="see"></span>
 					</div>
 					<br />
 					<input type="button" id="submit" value="登录" class="mui-btn mui-btn-block bg-orange f-white" />
@@ -127,15 +127,16 @@
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
 			});
-			document.getElementById('see').addEventListener('click',function(){
-				if(mui(".mui-input-password")[0].getAttribute("type")=="password"){
-					mui(".mui-input-password")[0].setAttribute("type","text");
-					this.style.color="#ccc";
-				}else{
-					mui(".mui-input-password")[0].setAttribute("type","password");
-					this.style.color="#fff";
+			function see(e) {
+				var pass = e.previousElementSibling;
+				if(pass.getAttribute('type') == "password") {
+					pass.setAttribute("type", "text");
+					e.setAttribute('class', e.getAttribute('class').replace(/off/, "no"));
+				} else {
+					pass.setAttribute("type", "password");
+					e.setAttribute('class', e.getAttribute('class').replace(/no/, "off"));
 				}
-			});
+			};
 			var customerName = document.getElementById('customerName');
 			var password = document.getElementById('password');
 			document.getElementById('submit').addEventListener('click',function(){

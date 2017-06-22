@@ -9,7 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_n5o6ioc4rv8to6r.css"/>
 		<style>
 			html,
 			body {
@@ -212,27 +212,22 @@
 							<div id="item2" class="mui-control-content mui-active">
 								<form class="mui-input-group">
 									<div class="mui-input-row">
-										<span class="mui-icon mui-icon-person-filled icon-left"></span>
+										<span class="iconfont icon-xingming icon-left"></span>
 										<input type="text" data-input-password="3" placeholder="姓名">
 									</div>
 									<div class="mui-input-row">
-										<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+										<span class="iconfont icon-shoujihao icon-left"></span>
 										<input type="text" data-input-password="3" placeholder="手机号">
 									</div>
 									<div class="mui-input-row">
-										<span class="mui-icon-extra mui-icon-extra-calc icon-left"></span>
+										<span class="iconfont icon-icon0103 icon-left"></span>
 										<button class="bg-orange f-white" id="send">发送验证码</button>
 										<input type="text" data-input-password="3" placeholder="验证码">
 									</div>
 									<div class="mui-input-row">
-										<span class="mui-icon mui-icon-locked icon-left"></span>
+										<span class="iconfont icon-denglumima icon-left"></span>
 										<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码">
-										<span class="mui-icon mui-icon-eye" onclick="see(this)"></span>
-									</div>
-									<div class="mui-input-row">
-										<span class="mui-icon mui-icon-locked icon-left"></span>
-										<input type="password" class="mui-input-password" data-input-password="3" placeholder="确认密码">
-										<span class="mui-icon mui-icon-eye" onclick="see(this)"></span>
+										<span class="iconfont icon-off-yanjing" onclick="see(this)"></span>
 									</div>
 									<div class="mui-text-left business-body">
 										<label for="file" class="f-white">上传营业执照:</label>
@@ -280,10 +275,10 @@
 				var pass = e.previousElementSibling;
 				if(pass.getAttribute('type') == "password") {
 					pass.setAttribute("type", "text");
-					e.style.color = '#ccc';
+					e.setAttribute('class', e.getAttribute('class').replace(/off/, "no"));
 				} else {
 					pass.setAttribute("type", "password");
-					e.style.color = '#fff';
+					e.setAttribute('class', e.getAttribute('class').replace(/no/, "off"));
 				}
 			};
 			//发送验证码
