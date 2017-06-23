@@ -15,7 +15,7 @@
 		<style>
 			html,
 			body {
-				background-color: #efeff4;
+				background-color: #fff;
 			}
 			
 			#offCanvasSideScroll {
@@ -25,19 +25,6 @@
 			.f-14 {
 				font-size: 14px!important;
 			}
-			
-			.top-border:before {
-				position: absolute;
-				right: 0;
-				top: 0;
-				left: 0;
-				height: 1px;
-				content: '';
-				-webkit-transform: scaleY(.5);
-				transform: scaleY(.5);
-				background-color: #c8c7cc;
-			}
-			
 			.mui-btn,
 			button,
 			input[type=button],
@@ -69,14 +56,13 @@
 						<label>联系地址:</label>
 						<input type="text" placeholder="请输入详细地址" class="mui-text-right text-overflow f-14 f-cc" id="showCityPicker3">
 					</div>
-					<br />
-					<div class="mui-input-row top-border">
+					<div class="mui-input-row ">
 						<label>联系人:</label>
 						<input type="text" class="mui-input-clear mui-text-right" placeholder="请输入联系人" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
 					</div>
 					<div class="mui-input-row">
 						<label>联系电话:</label>
-						<input type="text" class="mui-input-clear mui-text-right" placeholder="请输入联系电话" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+						<input type="tel" class="mui-input-clear mui-text-right" placeholder="请输入联系电话" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
 					</div>
 
 					<div class="mui-button-row">

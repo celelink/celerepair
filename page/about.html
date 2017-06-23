@@ -63,16 +63,7 @@
 					});
 				});
 			}
-			(function($, doc) {
-				$.ready(function() {
-					var top = $('header');
-					for(var i = 0; i < top.length; i++) {
-						top[i].style.paddingTop = (128 / 1334 * window.screen.height - 44).toFixed(2) + 'px';
-						top[i].style.height = (128 / 1334 * window.screen.height).toFixed(2) + 'px';
-						document.getElementById('offCanvasSideScroll').style.paddingTop = (128 / 1334 * window.screen.height - 44).toFixed(2) + 'px';
-					}
-				})
-			})(mui, document);
+			
 		</script>
 	</body>
 
