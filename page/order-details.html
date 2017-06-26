@@ -90,7 +90,10 @@
 			}
 			
 			.order-img ul li img {
-				width: 100%
+				width: 100%;
+				min-width:100%;
+				height:100%;
+				min-height:100%
 			}
 			.bottom_tel{
 				position: fixed;
@@ -191,6 +194,158 @@
 					-moz-transform: rotate(360deg)
 				}
 			}
+			
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4px;
+				width: 70px;
+				background-color: rgba(150, 150, 150, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
 		</style>
 	</head>
 
@@ -269,12 +424,12 @@
 						<li class="mui-table-view-cell mui-media bg-white">
 							<div class="order-img">
 								<ul>
-									<li><img src="../images/logo.png" /></li>
-									<li><img src="../images/logo.png" /></li>
-									<li><img src="../images/logo.png" /></li>
-									<li><img src="../images/logo.png" /></li>
-									<li><img src="../images/logo.png" /></li>
-									<li><img src="../images/logo.png" /></li>
+									<li><p><img src="../images/logo.png"  data-preview-src="" data-preview-group="1" /></p></li>
+									<li><img src="../images/logo.png"  data-preview-src="" data-preview-group="1" /></li>
+									<li><img src="../images/logo.png"  data-preview-src="" data-preview-group="1" /></li>
+									<li><img src="../images/logo.png"  data-preview-src="" data-preview-group="1" /></li>
+									<li><img src="../images/logo.png"  data-preview-src="" data-preview-group="1" /></li>
+									<li><img src="../images/1.png"  data-preview-src="" data-preview-group="1" /></li>
 								</ul>
 							</div>
 						</li>
@@ -348,6 +503,8 @@
 			</ul>
 		</div>
 		<script src="../js/mui.min.js"></script>
+	<script src="../js/js/mui.zoom.js"></script>
+	<script src="../js/js/mui.previewimage.js"></script>
 		<!--<script type="text/javascript" src="../js/js/vconsole.min.js"></script>-->
 		<script>
 			//主界面和侧滑菜单界面均支持区域滚动；
@@ -365,19 +522,37 @@
 					});
 				});
 			};
-			mui.ajax({
-				url: 'http://index.php',
-				type: 'GET',
-				success: function(data) {
-					mui.toast(data);
-				},
-				error: function(xhr, type, errorThrown) {
-					mui.toast(type);
-				}
-			});
+//			mui.ajax({
+//				url: 'http://index.php',
+//				type: 'GET',
+//				success: function(data) {
+//					mui.toast(data);
+//				},
+//				error: function(xhr, type, errorThrown) {
+//					mui.toast(type);
+//				}
+//			});
 			//状态的封装
-			cycle(3);
-
+			var type=3
+			if(type == -1){//待审核
+				document.querySelector('.bottom_tel .mui-table-view-cell').innerHTML='<a href="tel:15000946761" id="submit" class="mui-text-center bg-orange f-white">联系客服</a>';
+				cycle(0);
+			}else if(type == 0 || type==1 || type==2){//待上门
+				document.querySelector('.bottom_tel .mui-table-view-cell').innerHTML='<a href="tel:15000946761" id="submit" class="mui-text-center bg-orange f-white">联系客服</a>';
+				cycle(1);
+			}else if(type == 3){//待审批
+				document.querySelector('.bottom_tel .mui-table-view-cell').innerHTML='<a href="tel:15000946761" id="submit" class="mui-text-center bg-orange f-white">联系客服</a>';
+				cycle(2);
+			}else if(type == 7){//代付款
+				document.querySelector('.bottom_tel .mui-table-view-cell').innerHTML='<div class="text mui-pull-left">订单价格:<span class="f-orange">￥${ obj.caseActualMoney }</span></div><a href="#picture" id="tel" class="mui-text-center mui-pull-right"><span class="mui-icon-extra mui-icon-extra-gold f-14"> 去支付</span></a>';
+				cycle(3);
+			}else if(type == 4 ){//待评价
+				document.querySelector('.bottom_tel .mui-table-view-cell').innerHTML='<a href="${ctx}/backend/h5/case/doEvaluation?caseId=${ obj.id }" id="submit" class="mui-text-center bg-orange f-white"><span class="mui-icon-extra mui-icon-extra-like f-14"> 待评价</span></a>';
+				cycle(4);
+			}else{
+				document.querySelector('.bottom_tel .mui-table-view-cell').innerHTML='<a href="tel:15000946761" id="submit" class="mui-text-center bg-orange f-white">联系客服</a>';
+				//完成订单
+			}
 			function cycle(a) {
 				var arr = document.querySelectorAll('.content .order-line img');
 				var arr2 = document.querySelectorAll('.content .order-line');
@@ -391,6 +566,18 @@
 				arr2[i - 1].classList.add('active');
 			}
 			
+			//设置图片的平均分配宽度
+			mui(function($) {
+				var old = document.querySelectorAll('.order-img li');
+				for(var i=0;i<old.length;i++){
+					old[i].style.height=old[i].parentNode.parentNode.scrollWidth/4+"px";
+				}
+			})
+			mui.previewImage();
+			//开启A标签的跳转
+			mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
+			})
 		</script>
 	</body>
 

@@ -274,9 +274,8 @@
 					}
 					return fragment;
 				};
-			})(mui);
-			//切换时的页面内容填充
-			(function($) {
+				
+				var ul = document.querySelector('.mui-table-view');
 				var html1 = '<ul class="mui-table-view"><li class="mui-table-view-cell mui-media"><a href="order-details.html"><img class="mui-media-object mui-pull-left" src="../images/cbd.jpg"><div class="mui-media-body"><p class="order-title">五金件安装</p><p class="mui-ellipsis">2017-06-05 17:50</p></div><span class="stateType">审<br />核<br />中</span></a></li></ul>';
 				var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell mui-media"><a href="order-details.html"><img class="mui-media-object mui-pull-left" src="../images/cbd.jpg"><div class="mui-media-body"><p class="order-title">五金件安装</p><p class="mui-ellipsis">2017-06-05 17:50</p></div><span class="stateType">审<br />核<br />中</span></a></li></ul>';
 				var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell mui-media"><a href="order-details.html"><img class="mui-media-object mui-pull-left" src="../images/cbd.jpg"><div class="mui-media-body"><p class="order-title">五金件安装</p><p class="mui-ellipsis">2017-06-05 17:50</p></div><span class="stateType">待<br />上<br />门</span></a></li></ul>';
@@ -290,7 +289,12 @@
 				//打开此页面时第一屏的页面内容
 				if(item1.querySelector('.mui-loading')) {
 					setTimeout(function() {
-						item1.querySelector('.mui-table-view').innerHTML = html1;
+						var ul = document.querySelector('.mui-table-view');
+						var list=createFragment(ul, 0, 5).children;
+						for(var i=0;i<list.length;i++){
+							ul.innerHTML='';
+							ul.appendChild(list[i]);
+						}
 					}, 500);
 				}
 				//点击导航栏时的事件
