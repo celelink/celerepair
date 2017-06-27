@@ -116,9 +116,6 @@
 				background: transparent
 			}
 			
-			.file-box {
-				margin-right: 2px;
-			}
 			
 			.file {
 				opacity: 0;
@@ -132,11 +129,10 @@
 			}
 			
 			.file-box {
-				display: inline-block;
-				width: 24%;
+				float: left;
 				position: relative;
 				overflow: hidden;
-				padding: 40px;
+				margin:0 1px 2px;
 				border: 1px dotted #ccc;
 				box-sizing: border-box;
 				-webkit-box-sizing: border-box;
@@ -144,6 +140,10 @@
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
 				border-radius: 10px;
+			}
+			.file-box:nth-child(4n+1),.file-box:nth-child(4n+4){
+				margin:0;
+				margin-bottom: 2px;
 			}
 			
 			.file-box img {
@@ -181,10 +181,11 @@
 			.business-body{
 				border: 1px solid #a7a7a7;
     			border-radius: 6px;
-    			padding:8px 9px;
+    			padding:9px;
 			}
 			.business {
-				margin-top: 8px;
+				margin-top: 9px;
+				overflow:hidden;
 			}
 			.mui-left{
 				float: left;
@@ -232,7 +233,7 @@
 									<div class="mui-text-left business-body">
 										<label for="file" class="f-white">上传营业执照:</label>
 										<div class="business">
-											<div class="file-box" style="margin-right: -2px;">
+											<div class="file-box">
 												<input type="file" class="file" accept="image/*" onchange="file(this)" />
 											</div>
 										</div>
@@ -294,9 +295,9 @@
 
 			function src() {
 				var arr = document.querySelectorAll('.file-box');
-				var old = document.querySelector('.mui-input-row').scrollWidth;
+				var old = document.querySelector('.business').scrollWidth;
 				for(var i = 0; i < arr.length; i++) {
-					arr[i].style.padding = (old - 35) / 8 + 'px';
+					arr[i].style.width=arr[i].style.height = (old-6) / 4+ 'px';
 				}
 			}
 			//图片上传事件
