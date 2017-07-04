@@ -86,17 +86,23 @@
 			}
 			
 			.file-box {
-				display: inline-block;
-				width: 24%;
-				position: relative;
-				overflow: hidden;
-				padding: 40px;
-				border: 1px solid #ccc;
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				border-radius: 10px;
+				float: left;
+			    position: relative;
+			    overflow: hidden;
+			    margin: 0 0 2px 2px;
+			    border: 1px dotted #ccc;
+			    box-sizing: border-box;
+				border-style: dashed;
+			    -webkit-box-sizing: border-box;
+			    -moz-box-sizing: border-box;
+			    -webkit-border-radius: 10px;
+			    -moz-border-radius: 10px;
+			    border-radius: 10px;
 			}
-			
+			.file-box:first-of-type{
+				margin:0;
+				margin-bottom: 2px;
+			}
 			.file-box img {
 				position: absolute;
 				top: 0;
@@ -190,8 +196,8 @@
 							</div>
 							<div class="as">
 								<span class="lines"></span>
-								<div class="file-box" style="margin-right: -2px;">
-									<input type="file" class="file" accept="image/*" onchange="file(this)">
+								<div class="file-box">
+									<input type="file" class="file" accept="image/*">
 								</div>
 							</div>
 						</div>
@@ -238,30 +244,33 @@
 				var arr = document.querySelectorAll('.file-box');
 				var old = document.querySelector('.as').scrollWidth;
 				for(var i = 0; i < arr.length; i++) {
-					arr[i].style.padding = (old - 35) / 8 + 'px';
+					arr[i].style.width=arr[i].style.height = (old-6) / 4+ 'px';
 				}
 			}
 
 			//图片上传事件
-			function file(event) {
-				var _this = event.parentNode;
-				if(window.FileReader) {
-					var reader = new FileReader();
-					reader.readAsDataURL(event.files[0]);
-					//监听文件读取结束后事件    
-					reader.onloadend = function(e) {
-						//console.log(e.target.result); //e.target.result就是最后的路径地址
-						var img = document.createElement('img');
-						var div = document.createElement('div');
-						img.setAttribute('src', e.target.result);
-						_this.appendChild(img);
-						div.setAttribute('class', 'file-box');
-						div.innerHTML = '<input type="file" class="file" accept="image/*" onchange="file(this)">'
-						_this.parentNode.appendChild(div);
-						src();
-					};
-				}
-			}
+			mui(function($) {
+				$("body").on("change", ".file",function(event) {
+					var _this = this.parentNode;
+					if(window.FileReader) {
+						var reader = new FileReader();
+						reader.readAsDataURL(this.files[0]);
+						//监听文件读取结束后事件    
+						reader.onloadend = function(e) {
+							//console.log(e.target.result); //e.target.result就是最后的路径地址
+							var img = document.createElement('img');
+							var div = document.createElement('div');
+							img.setAttribute('src', e.target.result);
+							_this.innerHTML="";
+							_this.appendChild(img);
+							div.setAttribute('class', 'file-box');
+							div.innerHTML = '<input type="file" class="file" accept="image/*"/>'
+							_this.parentNode.appendChild(div);
+							src();
+						};
+					}
+				})
+			})
 		</script>
 	</body>
 

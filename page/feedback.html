@@ -20,7 +20,7 @@
 			.mui-pages,
 			.mui-page,
 			.mui-page-content {
-				position: absolute;
+				position: relative;
 				left: 0;
 				right: 0;
 				top: 44px;
@@ -28,6 +28,10 @@
 				width: 100%;
 				height: 100%;
 				background-color: #efeff4;
+			}
+			
+			.mui-page-content {
+				top: 0
 			}
 			
 			.mui-pages {
@@ -204,7 +208,6 @@
 			}
 			
 			.mui-page-content {
-				padding-top: 44px;
 				margin-bottom: 44px
 			}
 			
@@ -213,15 +216,32 @@
 			}
 			
 			.file-box {
-				display: inline-block;
-				width: 24%;
+				float: left;
 				position: relative;
 				overflow: hidden;
-				padding: 40px;
-				border: 1px solid #ccc;
+				margin: 0 0 2px 2px;
+				border: 1px dotted #ccc;
+				box-sizing: border-box;
+				border-style: dashed;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
 				border-radius: 10px;
+			}
+			
+			.file-box:first-of-type {
+				margin: 0;
+				margin-bottom: 2px;
+			}
+			
+			.file-box img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 1;
+				min-height: 100%;
 			}
 			
 			.file {
@@ -259,25 +279,30 @@
 				background: #ccc
 			}
 			
-			.file-box {
-				margin-right: -2px
+			#submit {
+				border: none;
+				width: 100%;
+				margin-top: 50px;
+				background: #ff5700;
+				color: #fff
+			}
+			
+			.mui-page {
+				display: block;
 			}
 		</style>
 		<link rel="stylesheet" type="text/css" href="../css/css/feedback.css" />
 	</head>
 
 	<body class="mui-fullscreen">
-		<div id="feedback" class="feedback">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav f-white"></span>
-				</button>
-				<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right f-white">发送</button>
-				<h1 class="mui-center mui-title">问题反馈</h1>
-			</div>
-			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
+		<div id="feedback" class="mui-page feedback">
+			<header class="mui-bar mui-bar-nav transparent mui-box-shadow-none">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left f-white"></a>
+				<h1 class="mui-title">问题反馈</h1>
+			</header>
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-page-content">
 						<div class="mui-content-padded">
 							<div class="mui-inline">问题和意见</div>
 							<a class="mui-pull-right mui-inline" href="#popover">
@@ -319,19 +344,10 @@
 							<div class="file-box">
 								<input type="file" name="file" class="file" accept="image/*" />
 							</div>
-							<div class="file-box">
-								<input type="file" name="file" class="file" accept="image/*" />
-							</div>
-							<div class="file-box">
-								<input type="file" name="file" class="file" accept="image/*" />
-							</div>
-							<div class="file-box">
-								<input type="file" name="file" class="file" accept="image/*" />
-							</div>
 						</div>
 						<p>QQ/邮箱</p>
-						<div class="mui-input-row">
-							<input id='contact' type="text" class="mui-input-clear contact" placeholder="(选填,方便我们联系你 )" />
+						<div class="row mui-input-row">
+							<textarea id='question' class="mui-input-clear question" placeholder="请详细描述你的问题和意见..."></textarea>
 						</div>
 						<div class="mui-content-padded">
 							<div class="mui-inline">应用评分</div>
@@ -342,8 +358,8 @@
 								<i data-index="4" class="mui-icon mui-icon-star"></i>
 								<i data-index="5" class="mui-icon mui-icon-star"></i>
 							</div>
-						</div>
-						<br /><br />
+							<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">提交</button>
+						</div><br />
 					</div>
 				</div>
 			</div>
@@ -353,25 +369,50 @@
 	<script src="../js/js/mui.min.js "></script>
 	<script src="../js/js/mui.view.js "></script>
 	<script>
+		mui.init();
 		mui.init({
 			swipeBack: true //启用右滑关闭功能
 		});
-		mui('.mui-scroll-wrapper').scroll();
+		mui('#offCanvasSideScroll').scroll();
 		//设置图片的平均分配宽度
-		mui(function($) {
+		src();
+
+		function src() {
 			var arr = document.querySelectorAll('.file-box');
 			var old = document.querySelector('#image-list').scrollWidth;
 			for(var i = 0; i < arr.length; i++) {
-				arr[i].style.padding = (old - 35) / 8 + 'px';
+				arr[i].style.width = arr[i].style.height = (old - 26) / 4 + 'px';
 			}
 
-		});
+		};
 		//选择快捷输入
 		mui('.mui-popover').on('tap', 'li', function(e) {
 			document.getElementById("question").value = document.getElementById("question").value + this.children[0].innerHTML;
 			mui('.mui-popover').popover('toggle')
 		});
-
+		//图片上传事件
+		mui(function($) {
+			$("body").on("change", ".file", function(event) {
+				var _this = this.parentNode;
+				if(window.FileReader) {
+					var reader = new FileReader();
+					reader.readAsDataURL(this.files[0]);
+					//监听文件读取结束后事件    
+					reader.onloadend = function(e) {
+						//console.log(e.target.result); //e.target.result就是最后的路径地址
+						var img = document.createElement('img');
+						var div = document.createElement('div');
+						img.setAttribute('src', e.target.result);
+						_this.innerHTML = "";
+						_this.appendChild(img);
+						div.setAttribute('class', 'file-box');
+						div.innerHTML = '<input type="file" class="file" accept="image/*"/>'
+						_this.parentNode.appendChild(div);
+						src();
+					};
+				}
+			})
+		})
 		//应用评分
 		mui('.icons').on('tap', 'i', function() {
 			var index = parseInt(this.getAttribute("data-index"));

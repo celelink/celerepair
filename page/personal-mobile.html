@@ -9,7 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_n5o6ioc4rv8to6r.css"/>
 		<style>
 			html,
 			body {
@@ -60,6 +60,9 @@
 				border:none;
 				font-size: 14px;
 			}
+			.iconfont{
+				color:#ccc
+			}
 		</style>
 	</head>
 
@@ -72,18 +75,18 @@
 			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
 				<form class="mui-input-group">
 					<div class="mui-input-row">
-						<span class="mui-icon-extra mui-icon-extra-phone icon-left"></span>
+						<span class="iconfont icon-shoujihao icon-left"></span>
 						<input type="text" data-input-password="3" placeholder="手机号" style="padding-right:102px">
 					</div>
 					<div class="mui-input-row">
-						<span class="mui-icon mui-icon-locked icon-left f-blank"></span>
+						<span class="iconfont icon-icon0103 icon-left"></span>
 						<button class="bg-orange f-white" id="send">发送验证码</button>
 						<input type="text" data-input-password="3" placeholder="验证码">
 					</div>
 					<div class="mui-input-row">
-						<span class="mui-icon mui-icon-locked icon-left f-blank"></span>
+						<span class="iconfont icon-denglumima icon-left"></span>
 						<input type="password" class="mui-input-password" data-input-password="3" placeholder="登录密码"  style="padding-right:42px">
-						<span class="mui-icon mui-icon-eye" id="see"></span>
+						<span class="iconfont icon-off-yanjing" onclick="see(this)"></span>
 					</div>
 					<div class="btn-submit">
 						<input type="submit" name="submit" id="submit" value="完成" class="mui-btn mui-btn-block bg-orange" />
@@ -98,21 +101,37 @@
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
-			document.getElementById('see').addEventListener('click', function() {
-				if(mui(".mui-input-password")[0].getAttribute("type") == "password") {
-					mui(".mui-input-password")[0].setAttribute("type", "text");
-					this.style.color = "#ccc";
+			function see(e) {
+				var pass = e.previousElementSibling;
+				if(pass.getAttribute('type') == "password") {
+					pass.setAttribute("type", "text");
+					e.setAttribute('class', e.getAttribute('class').replace(/off/, "no"));
 				} else {
-					mui(".mui-input-password")[0].setAttribute("type", "password");
-					this.style.color = "#000";
+					pass.setAttribute("type", "password");
+					e.setAttribute('class', e.getAttribute('class').replace(/no/, "off"));
 				}
-			});
+			};
 			//发送验证码
-			document.getElementById('send').addEventListener('click',function(event){
+			document.getElementById('send').addEventListener('click', function(event) {
 				var event = event || window.event;
 				event.preventDefault();
 				window.event.returnValue = false;
-				alert('455');
+				var _this=this;
+				//成功
+				_this.innerHTML='已发送(<span id="count">60</span>)秒';
+				var time=parseInt(document.getElementById("count").innerHTML);
+				var timer=setInterval(function() {
+						time -= 1;
+						if(time == 0 ) {
+							_this.innerHTML='获取验证码';
+							//清除定时器
+							clearInterval(timer);
+						} else {
+							_this.setAttribute("disabled", "disabled");
+							//设置倒计时数字
+							document.getElementById("count").innerHTML=time;
+						}
+					}, 1000);
 			})
 		</script>
 	</body>

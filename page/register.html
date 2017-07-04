@@ -235,7 +235,7 @@
 										<label for="file" class="f-white">上传营业执照:</label>
 										<div class="business">
 											<div class="file-box">
-												<input type="file" class="file" accept="image/*" onchange="file(this)" />
+												<input type="file" class="file" accept="image/*"/>
 											</div>
 										</div>
 									</div>
@@ -288,7 +288,22 @@
 				var event = event || window.event;
 				event.preventDefault();
 				window.event.returnValue = false;
-				console.log('455');
+				var _this=this;
+				//成功
+				_this.innerHTML='已发送(<span id="count">60</span>)秒';
+				var time=parseInt(document.getElementById("count").innerHTML);
+				var timer=setInterval(function() {
+						time -= 1;
+						if(time == 0 ) {
+							_this.innerHTML='获取验证码';
+							//清除定时器
+							clearInterval(timer);
+						} else {
+							_this.setAttribute("disabled", "disabled");
+							//设置倒计时数字
+							document.getElementById("count").innerHTML=time;
+						}
+					}, 1000);
 			})
 
 			//设置图片的平均分配宽度
@@ -301,27 +316,30 @@
 					arr[i].style.width=arr[i].style.height = (old-6) / 4+ 'px';
 				}
 			}
+			
 			//图片上传事件
-			function file(event) {
-				console.log(event);
-				var _this = event.parentNode;
-				if(window.FileReader) {
-					var reader = new FileReader();
-					reader.readAsDataURL(event.files[0]);
-					//监听文件读取结束后事件    
-					reader.onloadend = function(e) {
-						//console.log(e.target.result); //e.target.result就是最后的路径地址
-						var img = document.createElement('img');
-						var div = document.createElement('div');
-						img.setAttribute('src', e.target.result);
-						_this.appendChild(img);
-						div.setAttribute('class', 'file-box');
-						div.innerHTML = '<input type="file" class="file" accept="image/*" onchange="file(this)">'
-						_this.parentNode.appendChild(div);
-						src();
-					};
-				}
-			}
+			mui(function($) {
+				$("body").on("change", ".file",function(event) {
+					var _this = this.parentNode;
+					if(window.FileReader) {
+						var reader = new FileReader();
+						reader.readAsDataURL(this.files[0]);
+						//监听文件读取结束后事件    
+						reader.onloadend = function(e) {
+							//console.log(e.target.result); //e.target.result就是最后的路径地址
+							var img = document.createElement('img');
+							var div = document.createElement('div');
+							img.setAttribute('src', e.target.result);
+							_this.innerHTML="";
+							_this.appendChild(img);
+							div.setAttribute('class', 'file-box');
+							div.innerHTML = '<input type="file" class="file" accept="image/*"/>'
+							_this.parentNode.appendChild(div);
+							src();
+						};
+					}
+				})
+			})
 			
 			(function($, doc) {
 				$.ready(function() {
