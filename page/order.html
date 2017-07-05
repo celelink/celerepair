@@ -218,7 +218,18 @@
 		<script src="../js/js/mui.pullToRefresh.js"></script>
 		<script src="../js/js/mui.pullToRefresh.material.js"></script>
 		<script>
-			mui.init();
+			
+			mui.init({
+				swipeBack: true
+			});
+			//开启A标签的跳转
+			mui('body').on('tap', 'a', function() {
+				if(this.href.indexOf('#item')>0){
+					return
+				}else{
+					window.top.location.href = this.href;
+				}
+			});
 			(function($) {
 				//阻尼系数
 				var deceleration = mui.os.ios ? 0.003 : 0.0009;

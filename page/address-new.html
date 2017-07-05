@@ -90,11 +90,32 @@
 					});
 				});
 			}
-
+	
+			function seach(a){
+				for(var i=0;i<cityData3.length;i++){
+					if(cityData3[i].value==a){
+						return cityData3[i].text
+					}else{
+						for(var m=0;m<cityData3[i].children.length;m++){
+							if(cityData3[i].children[m].value==a){
+								return cityData3[i].children[m].text
+							}else{
+								for(var n=0;n<cityData3[i].children[m].children.length;n++){
+									if(cityData3[i].children[m].children[n].value==a){
+										return cityData3[i].children[m].children[n].text
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 			(function($, doc) {
 				$.init();
 				$.ready(function() {
-					//					//级联示例
+					
+					document.getElementById('showCityPicker3').value=seach(1)+" "+seach(5)+" "+seach(6);
+					//	级联示例
 					var cityPicker3 = new $.PopPicker({
 						layer: 3
 					});

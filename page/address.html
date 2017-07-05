@@ -15,6 +15,7 @@
 			body {
 				background-color: #efeff4;
 			}
+			
 			span.mui-icon {
 				font-size: 20px;
 				color: #fff;
@@ -92,14 +93,14 @@
 								<a class="mui-card-link">
 									<div class="mui-input-row mui-checkbox mui-left">
 										<label class="f-blank">设为默认</label>
-										<input name="checkbox" value="Item 1" type="checkbox">
+										<input name="checkbox" value="Item 1" type="checkbox" class="checkbox">
 									</div>
 								</a>
 								<div class="mui-card-link">
 									<a class="f-orange">
 										<span class="mui-icon mui-icon-compose f-orange"></span> 编辑
 									</a>
-									<a class="f-blank">
+									<a class="f-blank del">
 										<span class="mui-icon mui-icon-trash f-blank"></span> 删除
 									</a>
 								</div>
@@ -129,14 +130,14 @@
 								<a class="mui-card-link">
 									<div class="mui-input-row mui-checkbox mui-left">
 										<label class="f-blank">设为默认</label>
-										<input name="checkbox" value="Item 1" type="checkbox">
+										<input name="checkbox" value="Item 1" type="checkbox" class="checkbox">
 									</div>
 								</a>
 								<div class="mui-card-link">
 									<a class="f-orange">
 										<span class="mui-icon mui-icon-compose f-orange"></span> 编辑
 									</a>
-									<a class="f-blank">
+									<a class="f-blank del" id="555">
 										<span class="mui-icon mui-icon-trash f-blank"></span> 删除
 									</a>
 								</div>
@@ -166,14 +167,14 @@
 								<a class="mui-card-link">
 									<div class="mui-input-row mui-checkbox mui-left">
 										<label class="f-blank">设为默认</label>
-										<input name="checkbox" value="Item 1" type="checkbox">
+										<input name="checkbox" value="Item 1" type="checkbox" class="checkbox">
 									</div>
 								</a>
 								<div class="mui-card-link">
 									<a class="f-orange">
 										<span class="mui-icon mui-icon-compose f-orange"></span> 编辑
 									</a>
-									<a class="f-blank">
+									<a class="f-blank del">
 										<span class="mui-icon mui-icon-trash f-blank"></span> 删除
 									</a>
 								</div>
@@ -188,13 +189,33 @@
 					swipeBack: true //启用右滑关闭功能
 				});
 				//设置为默认的复选框
-				mui('.mui-input-group').on('change', 'input', function() {
-					var value = this.checked ? "true" : "false";
-					alert("checked：" + value);
-				});
+
 				//初始化单页的区域滚动
 				mui('.mui-scroll-wrapper').scroll();
-				
+
+				//删除
+				mui(function($) {
+					$('body').on('tap', '.del', function() {
+						console.log(this.id);
+						console.log(this.parentNode.parentNode.parentNode.parentNode.remove());
+					});
+
+					$('body').on('tap', '.checkbox', function() {
+						if(this.checked) {
+							this.previousElementSibling.innerHTML = "设为默认";
+							var checkArr = document.getElementsByClassName('checkbox');
+							for(var i = 0; i < checkArr.length; i++) {
+								checkArr[i].removeAttribute('checked')
+							}
+						} else {
+							this.previousElementSibling.innerHTML = "默认地址";
+							var checkArr = document.getElementsByClassName('checkbox');
+							for(var i = 0; i < checkArr.length; i++) {
+								checkArr[i].removeAttribute('checked')
+							}
+						}
+					});
+				})
 			</script>
 	</body>
 

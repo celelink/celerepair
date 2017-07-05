@@ -215,7 +215,7 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a href="javascript:;" class="mui-navigate-right" onclick="confirmBtn(1)">
+								<a href="javascript:;" class="mui-navigate-right tel">
 									客服热线
 								</a>
 							</li>
@@ -228,34 +228,8 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a href="javascript:;" class="mui-navigate-right" onclick="confirmBtn(2)">
+								<a href="javascript:;" class="mui-navigate-right tel">
 									清除缓存
-								</a>
-							</li>
-						</ul>
-						<br />
-						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									待添加菜单
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									待添加菜单
-								</a>
-							</li>
-						</ul>
-						<br />
-						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									待添加菜单
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									待添加菜单
 								</a>
 							</li>
 						</ul>
@@ -459,9 +433,10 @@
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
 			});
+			
 			//电话号码
-			function confirmBtn(event) {
-				if(event == 1) {
+			mui('body').on('tap', '.tel', function() {
+				if(this.innerText == "客服热线") {
 					var btnArray = ['取消', '拨打'];
 					mui.confirm('400-888-888', '您确定拨打电话吗？', btnArray, function(e) {
 						if(e.index == 1) {
@@ -470,7 +445,7 @@
 							//info.innerText = 'MUI没有得到你的认可，继续加油'
 						}
 					})
-				} else if(event == 2) {
+				} else if(this.innerText == "清除缓存") {
 					var btnArray = ['取消', '确定'];
 					mui.confirm('您确定清除缓存吗？', '温馨提示', btnArray, function(e) {
 						if(e.index == 1) {
@@ -480,8 +455,8 @@
 						}
 					})
 				}
-
-			}
+			});
+			
 			
 			//适应屏幕的高度
 //			(function($, doc) {
