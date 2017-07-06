@@ -200,19 +200,17 @@
 						console.log(this.parentNode.parentNode.parentNode.parentNode.remove());
 					});
 
-					$('body').on('tap', '.checkbox', function() {
+					$('body').on('change', '.checkbox', function() {
+						var checkArr = document.getElementsByClassName('checkbox');
 						if(this.checked) {
-							this.previousElementSibling.innerHTML = "设为默认";
-							var checkArr = document.getElementsByClassName('checkbox');
 							for(var i = 0; i < checkArr.length; i++) {
-								checkArr[i].removeAttribute('checked')
+								checkArr[i].checked=false;
+								checkArr[i].previousElementSibling.innerHTML = "设为默认";
+								this.checked=true;
+								this.previousElementSibling.innerHTML = "默认地址";
 							}
 						} else {
-							this.previousElementSibling.innerHTML = "默认地址";
-							var checkArr = document.getElementsByClassName('checkbox');
-							for(var i = 0; i < checkArr.length; i++) {
-								checkArr[i].removeAttribute('checked')
-							}
+							this.previousElementSibling.innerHTML = "设为默认";
 						}
 					});
 				})
