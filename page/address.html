@@ -196,21 +196,26 @@
 				//删除
 				mui(function($) {
 					$('body').on('tap', '.del', function() {
-						console.log(this.id);
-						console.log(this.parentNode.parentNode.parentNode.parentNode.remove());
+						var checked=this.parentNode.parentNode.getElementsByClassName('checkbox')[0];
+						console.log(checked.checked);
+						//console.log(this.id);
+						//console.log(this.parentNode.parentNode.parentNode.parentNode.remove());
 					});
 
 					$('body').on('change', '.checkbox', function() {
 						var checkArr = document.getElementsByClassName('checkbox');
 						if(this.checked) {
 							for(var i = 0; i < checkArr.length; i++) {
+								checkArr[i].removeAttribute('checked');
 								checkArr[i].checked=false;
 								checkArr[i].previousElementSibling.innerHTML = "设为默认";
 								this.checked=true;
 								this.previousElementSibling.innerHTML = "默认地址";
 							}
 						} else {
-							this.previousElementSibling.innerHTML = "设为默认";
+							alert("不能取消");
+							this.checked=true;
+							//this.previousElementSibling.innerHTML = "设为默认";
 						}
 					});
 				})

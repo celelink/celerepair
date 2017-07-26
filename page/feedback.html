@@ -407,24 +407,20 @@
 		//图片上传事件
 		mui(function($) {
 			$("body").on("change", ".file", function(event) {
-				var _this = this.parentNode;
-				if(window.FileReader) {
-					var reader = new FileReader();
-					reader.readAsDataURL(this.files[0]);
-					//监听文件读取结束后事件    
-					reader.onloadend = function(e) {
-						//console.log(e.target.result); //e.target.result就是最后的路径地址
-						var img = document.createElement('img');
-						var div = document.createElement('div');
-						img.setAttribute('src', e.target.result);
-						_this.innerHTML = "";
-						_this.appendChild(img);
-						div.setAttribute('class', 'file-box');
-						div.innerHTML = '<input type="file" class="file" accept="image/*"/>'
-						_this.parentNode.appendChild(div);
-						src();
-					};
-				}
+				var windowURL = window.URL || window.webkitURL,
+					dataURL, _this = this.parentNode;
+				dataURL = windowURL.createObjectURL(this.files[0]);
+				dealImage(dataURL, this, function(e) {
+					var img = document.createElement('img');
+					var div = document.createElement('div');
+					img.setAttribute('src', e);
+					_this.innerHTML = "";
+					_this.appendChild(img);
+					div.setAttribute('class', 'file-box');
+					div.innerHTML = '<input type="file" class="file" accept="image/*"/>'
+					_this.parentNode.appendChild(div);
+					src();
+				});
 			})
 		})
 		//应用评分
@@ -445,12 +441,47 @@
 			}
 			starIndex = index;
 		});
-//		(function($, doc) {
-//			$.ready(function() {
-//				var index=document.getElementsByClassName('mui-icon-star-filled').length;
-//				console.log(index);
-//			})
-//		})(mui, document);
+
+		function dealImage(path, obj, callback) {
+			var img = new Image();
+			img.src = path;
+			img.onload = function() {
+				var that = this;
+				// 默认按比例压缩
+				var w = that.width,
+					h = that.height,
+					scale = w / h;
+				w = obj.width || w;
+				h = obj.height || (w / scale);
+				var quality = 0.2; // 默认图片质量为0.7
+				//生成canvas
+				var canvas = document.createElement('canvas');
+				var ctx = canvas.getContext('2d');
+				// 创建属性节点
+				var anw = document.createAttribute("width");
+				anw.nodeValue = w;
+				var anh = document.createAttribute("height");
+				anh.nodeValue = h;
+				canvas.setAttributeNode(anw);
+				canvas.setAttributeNode(anh);
+				ctx.drawImage(that, 0, 0, w, h);
+				// 图像质量
+				if(obj.quality && obj.quality <= 1 && obj.quality > 0) {
+					quality = obj.quality;
+				}
+				// quality值越小，所绘制出的图像越模糊
+				var base64 = canvas.toDataURL('image/jpeg', quality);
+				// 回调函数返回base64的值
+				callback(base64);
+			}
+		}
+
+		//		(function($, doc) {
+		//			$.ready(function() {
+		//				var index=document.getElementsByClassName('mui-icon-star-filled').length;
+		//				console.log(index);
+		//			})
+		//		})(mui, document);
 	</script>
 
 </html>
